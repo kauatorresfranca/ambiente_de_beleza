@@ -1,11 +1,16 @@
+import Header from "./components/header";
+import Hero from "./components/hero";
 
 
 function App() {
   
 
   return (
-    <>ambiente de beleza</>
+      <>
+        <Header />
+        <Hero />
+      </>
   )
-}
+} 
 
 export default App
