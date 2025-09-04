@@ -1,3 +1,4 @@
+import Button from '../button'
 import * as S from './styles'
 
 const Hero = () => {
@@ -7,10 +8,7 @@ const Hero = () => {
                 <S.HeroContent>
                     <S.HeroTitle>Sua beleza em um <span>ambiente</span> de cuidado e <span>sofisticação</span></S.HeroTitle>
                     <S.HeroSubtitle>Descubra o melhor de você em nosso salão de beleza. Profissionais especializados e ambiente acolhedor para sua transformação.</S.HeroSubtitle>
-                    <S.HeroButtonGroup>
-                        <S.HeroButton primary>Agende seu horário</S.HeroButton>
-                        <S.HeroButton secondary>Conheça nossos serviços</S.HeroButton>
-                    </S.HeroButtonGroup>
+                        <Button primary><i className="ri-calendar-line"></i>Agende seu horário</Button>
                 </S.HeroContent>
             </div>
         </S.Hero>

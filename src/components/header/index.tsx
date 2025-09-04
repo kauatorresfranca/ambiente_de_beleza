@@ -1,4 +1,5 @@
 import * as S from './styles'
+import Button from '../button/index'
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
           <S.HeaderLink href="/testimonials">Depoimentos</S.HeaderLink>
           <S.HeaderLink href="/contact">Contato</S.HeaderLink>
         </S.HeaderNavigation>
-        <S.HeaderButton><i className="ri-phone-line"></i>Agendar Horário</S.HeaderButton>
+        <Button primary><i className="ri-phone-line"></i>Agendar Horário</Button>
       </div>
     </S.Header>
   )

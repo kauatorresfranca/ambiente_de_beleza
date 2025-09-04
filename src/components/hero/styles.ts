@@ -48,22 +48,9 @@ export const HeroTitle = styled.h2`
 `;
 
 export const HeroSubtitle = styled.h2`
+  margin-bottom: 24px;
   font-size: 18px;
   font-weight: 400;
   color: ${colors.white};
   max-width: 540px;
 `;
-
-export const HeroButtonGroup = styled.div`
-  margin-top: 24px;
-  display: flex;
-  gap: 16px; 
-}`;
-
-export const HeroButton = styled.button<{ primary?: boolean; secondary?: boolean }>`
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  `

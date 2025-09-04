@@ -7,7 +7,7 @@ export const Header = styled.header`
   z-index: 1;
   width: 100%;
   padding: 16px;
-  background-color: #f8f8f8;
+  background-color: ${colors.background};
 
   .container {
     display: flex;
@@ -29,13 +29,23 @@ export const HeaderNavigation = styled.nav`
 
 export const HeaderLink = styled.a`
   margin: 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 6px 0;
+  border-bottom: 3px solid transparent;
   text-decoration: none;
   color: ${colors.title};
   transition: .3s ease;
 
   &:hover {
     color: ${colors.primary};
+    border-bottom: 2px solid ${colors.primary};
   }
+
+  &.active {
+    color: ${colors.primary};
+    border-bottom: 2px solid ${colors.primary};
+}
 `;
 
 export const HeaderButton = styled.button`
