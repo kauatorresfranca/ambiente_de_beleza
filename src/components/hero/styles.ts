@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HeroImage from "../../assets/hero.jpeg";
-import { colors } from "../../../styles";
+import { breakpoints, colors } from "../../../styles";
 
 export const Hero = styled.section`
   position: relative;
@@ -45,6 +45,10 @@ export const HeroTitle = styled.h2`
   span {
     color: ${colors.primary};
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 32px;
+  }
 `;
 
 export const HeroSubtitle = styled.h2`
@@ -53,4 +57,9 @@ export const HeroSubtitle = styled.h2`
   font-weight: 400;
   color: ${colors.white};
   max-width: 540px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 14px;
+    max-width: 320px;
+  }
 `;

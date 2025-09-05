@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../../styles";
+import { breakpoints, colors } from "../../../styles";
 
 export const Header = styled.header`
   position: sticky;
@@ -25,6 +25,19 @@ export const HeaderLogo = styled.img`
 export const HeaderNavigation = styled.nav`
   display: flex;
   align-items: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
+  }
+`
+
+export const HeaderNavigationMobile = styled.nav`
+  display: none;
+
+  &.active {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const HeaderLink = styled.a`

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { colors } from '../../../styles';
+import { breakpoints, colors } from '../../../styles';
 
 export const Services = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 48px 0px;
+    padding: 48px 24px;
     text-align: center;
 `;
 
@@ -41,4 +41,8 @@ export const ServicesList = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+        grid-template-columns: 1fr;
+    }
 `
