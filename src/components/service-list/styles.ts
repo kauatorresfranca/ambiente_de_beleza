@@ -34,7 +34,7 @@ export const ServicesDescription = styled.p`
     font-size: 16px;
     font-weight: 400;
     color: ${colors.text};
-    margin: 0 auto;
+    margin: 0 auto 32px auto;
 `
 
 export const ServicesList = styled.ul`

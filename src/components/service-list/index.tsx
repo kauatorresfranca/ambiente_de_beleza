@@ -4,9 +4,9 @@ import * as S from './styles'
 const Services = [
   {
     id: 1,
-    iconClassName: 'ri-scissors-line',
+    iconClassName: 'ri-sparkling-2-line', // brilho = unhas feitas
     title: 'Unhas',
-    description: 'Cuidados completos para suas mãos e pés.',
+    description: 'Beleza até a ponta dos dedos! Do cuidado básico ao luxo das técnicas modernas.',
     price: 'A partir de R$ 49,90',
     subServices: [
       'Manicure',
@@ -20,9 +20,9 @@ const Services = [
   },
   {
     id: 2,
-    iconClassName: 'ri-scissors-line',
+    iconClassName: 'ri-scissors-2-line', // tesoura = corte de cabelo
     title: 'Cabelo',
-    description: 'Transforme seu visual com nossos serviços capilares.',
+    description: 'Transforme seus fios com cortes modernos, escovas incríveis e tratamentos revitalizantes.',
     price: 'A partir de R$ 79,90',
     subServices: [
       'Corte',
@@ -42,37 +42,46 @@ const Services = [
   },
   {
     id: 3,
-    iconClassName: 'ri-palette-line',
-    title: 'Química',
-    description: 'Resultados profissionais para realçar sua beleza.',
+    iconClassName: 'ri-palette-line', // paleta de cores = química capilar
+    title: 'Química Capilar',
+    description: 'Cores vibrantes, mechas iluminadas e técnicas modernas para renovar o visual.',
     price: 'A partir de R$ 120,00',
-    subServices: [
-      'Luzes',
-      'Mechas',
-      'Moreno iluminado',
-      'Coloração',
-      'Permanente afro',
-    ],
+    subServices: ['Luzes', 'Mechas', 'Moreno iluminado', 'Coloração', 'Permanente afro'],
   },
   {
     id: 4,
-    iconClassName: 'ri-heart-line',
-    title: 'Estética',
-    description: 'Tratamentos para pele e bem-estar.',
+    iconClassName: 'ri-eye-line', // olhar = sobrancelhas e micropigmentação
+    title: 'Sobrancelhas & Micropigmentação',
+    description: 'Destaque seu olhar com design perfeito e técnicas avançadas de micropigmentação.',
+    price: 'A partir de R$ 59,90',
+    subServices: [
+      'Design de sobrancelhas',
+      'Micropigmentação de sobrancelhas',
+      'Micropigmentação de olhos',
+      'Micropigmentação de lábios',
+    ],
+  },
+  {
+    id: 5,
+    iconClassName: 'ri-heart-3-line', // brilho/cuidado = estética e pele
+    title: 'Estética & Bem-estar',
+    description: 'Tratamentos de pele e cuidados estéticos para renovar sua beleza natural.',
     price: 'Sob consulta',
     subServices: [
-      'Depilação',
-      'Micropigmentação (sobrancelhas, contorno dos olhos e boca)',
-      'Design de sobrancelhas',
       'Limpeza de pele',
-      'Jato de plasma: Remoção de sinais (sinais, verrugas e sirigomas)',
-      'Jato de plasma: Linhas de expressão',
-      'Jato de plasma: Tratamento de acne',
-      'Jato de plasma: Tratamento de manchas',
-      'Jato de plasma: Flacidez',
-      'Jato de plasma: Blefaroplastia sem corte',
-      'Jato de plasma: Tratamento e camuflagem de estrias',
+      'Depilação',
+      'Jato de plasma: linhas de expressão',
+      'Jato de plasma: manchas e acne',
+      'Jato de plasma: flacidez e estrias',
     ],
+  },
+  {
+    id: 6,
+    iconClassName: 'ri-gift-line', // presente = pacotes especiais
+    title: 'Pacotes Especiais',
+    description: 'Combine serviços exclusivos e viva uma experiência de beleza completa.',
+    price: 'A partir de R$ 199,90',
+    subServices: ['Dia da Noiva', 'Dia da Princesa', 'Pacote Relax', 'Pacote Premium'],
   },
 ]
 
@@ -84,7 +93,7 @@ const ServiceList = () => {
           Nossos <span>Serviços</span>
         </S.ServicesTitle>
         <S.ServicesDescription>
-          Oferecemos uma gama completa de serviços de beleza com qualidade e carinho especial
+          Do cuidado diário a momentos especiais, temos serviços personalizados para valorizar ainda mais sua beleza.
         </S.ServicesDescription>
         <S.ServicesList>
           {Services.map((service) => (

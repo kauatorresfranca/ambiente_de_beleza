@@ -15,7 +15,7 @@ export const colors = {
   text: "#4a5565",
   white: "#fff",
   lightPrimary: "rgba(252, 228, 97, 0.38)",
-  darkPrimary: "#b27d00",
+  darkPrimary: "#a77501ff",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
     scroll-behavior: smooth;
   }
 

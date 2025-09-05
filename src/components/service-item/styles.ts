@@ -10,7 +10,7 @@ export const ServiceItem = styled.li`
     box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.1);
     padding: 24px;
     transition: .3s ease;
-    border: 1px solid ${colors.primary}30;
+    border: 1px solid ${colors.primary}40;
     border-radius: 10px;
 
     &:hover {
@@ -62,6 +62,7 @@ export const ServiceJobList = styled.ul`
     font-size: 14px;
     text-align: left;
     font-weight: 400;
+    overflow-y: auto;
 
     li {
         list-style-type: disc;
