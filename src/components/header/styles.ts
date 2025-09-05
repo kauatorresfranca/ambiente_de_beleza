@@ -4,7 +4,7 @@ import { colors } from "../../../styles";
 export const Header = styled.header`
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   width: 100%;
   padding: 16px;
   background-color: ${colors.background};
@@ -17,8 +17,8 @@ export const Header = styled.header`
 `;
 
 export const HeaderLogo = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   margin-right: 12px;
 `;
 

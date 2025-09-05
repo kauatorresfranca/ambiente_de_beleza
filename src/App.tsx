@@ -1,5 +1,6 @@
 import Header from "./components/header";
 import Hero from "./components/hero";
+import ServiceList from "./components/service-list";
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <>
         <Header />
         <Hero />
+        <ServiceList />
       </>
   )
 } 

@@ -1,11 +1,12 @@
 import * as S from './styles'
 import Button from '../button/index'
+import logo from '../../assets/logo.jpg'
 
 const Header = () => {
   return (
     <S.Header>
       <div className="container">
-        <S.HeaderLogo src="/logo.svg" alt="Logo" />
+        <S.HeaderLogo src={logo} alt="Logo" />
         <S.HeaderNavigation>
           <S.HeaderLink href="/">Inicio</S.HeaderLink>
           <S.HeaderLink href="/services">Nossos Serviços</S.HeaderLink>

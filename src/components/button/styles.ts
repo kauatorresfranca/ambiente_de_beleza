@@ -16,7 +16,7 @@ export const Button = styled.div<ButtonProps>`
     font-size: 14px;
     font-weight: 500;
     color: ${(props) => props.primary ? colors.white : colors.primary};
-    border: ${(props) => props.secundary ? `2px solid ${colors.primary}` : '2px solid transparent'};
+    border: ${(props) => props.secundary ? `1px solid ${colors.primary}` : '1px solid transparent'};
     padding: 8px 12px;
     border-radius: 8px;
     transition: .3s ease;

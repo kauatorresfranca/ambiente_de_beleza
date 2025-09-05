@@ -11,9 +11,11 @@ export const colors = {
   primary: "#FFBF00",
   secondary: "#080706",
   background: "#f5f5f5",
-  title: "#333",
-  text: "#666",
+  title: "#101828",
+  text: "#4a5565",
   white: "#fff",
+  lightPrimary: "rgba(252, 228, 97, 0.38)",
+  darkPrimary: "#b27d00",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -27,10 +29,6 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-  }
-
-  li {
-    list-style: none;
   }
 
   .container {
