@@ -88,10 +88,10 @@ const Services = [
 const ServiceList = () => {
   return (
     <S.Services>
-      <div className="container">
         <S.ServicesTitle>
           Nossos <span>Serviços</span>
         </S.ServicesTitle>
+      <div className="container">
         <S.ServicesDescription>
           Do cuidado diário a momentos especiais, temos serviços personalizados para valorizar ainda mais sua beleza.
         </S.ServicesDescription>

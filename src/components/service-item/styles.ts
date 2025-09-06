@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../styles';
+import { breakpoints, colors } from '../../../styles';
 import Button from '../button';
 
 export const ServiceItem = styled.li`
@@ -39,6 +39,11 @@ export const ServiceTitle = styled.h3`
     font-size: 20px;
     color: ${colors.title};
     margin: 8px 0px;
+    text-align: left;
+
+    @media (max-width: ${breakpoints.tablet}) {
+        font-size: 18px;
+    }
 `
 
 export const ServiceText = styled.p`
@@ -63,6 +68,14 @@ export const ServiceJobList = styled.ul`
     text-align: left;
     font-weight: 400;
     overflow-y: auto;
+
+    p {
+        text-decoration: underline;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 
     li {
         list-style-type: disc;

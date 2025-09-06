@@ -14,12 +14,22 @@ export const Header = styled.header`
     align-items: center;
     justify-content: space-between;
   }
+
+  .menu-hamgurguer { 
+    display: none;
+    font-size: 24px;
+  }
+
+  @media(max-width: ${breakpoints.tablet}) {
+    .menu-hamgurguer {
+      display: block;
+    }
+  }
 `;
 
 export const HeaderLogo = styled.img`
   width: 80px;
   height: 80px;
-  margin-right: 12px;
 `;
 
 export const HeaderNavigation = styled.nav`
@@ -32,13 +42,29 @@ export const HeaderNavigation = styled.nav`
 `
 
 export const HeaderNavigationMobile = styled.nav`
-  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: ${colors.background};
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 
   &.active {
-    display: flex;
-    flex-direction: column;
+    max-height: 300px;
+    opacity: 1;
+    visibility: visible;
   }
-`
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px;
+`;
+
 
 export const HeaderLink = styled.a`
   margin: 0 12px;

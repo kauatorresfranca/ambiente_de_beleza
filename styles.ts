@@ -14,7 +14,7 @@ export const colors = {
   title: "#101828",
   text: "#4a5565",
   white: "#fff",
-  lightPrimary: "rgba(252, 228, 97, 0.38)",
+  lightPrimary: "rgba(252, 229, 97, 0.3)",
   darkPrimary: "#a77501ff",
 };
 

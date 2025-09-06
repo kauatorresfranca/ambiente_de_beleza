@@ -1,5 +1,6 @@
 import Header from "./components/header";
 import Hero from "./components/hero";
+import ProfessionalList from "./components/professional-list";
 import ServiceList from "./components/service-list";
 
 
@@ -11,6 +12,7 @@ function App() {
         <Header />
         <Hero />
         <ServiceList />
+        <ProfessionalList />
       </>
   )
 } 
