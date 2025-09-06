@@ -16,6 +16,7 @@ export const colors = {
   white: "#fff",
   lightPrimary: "rgba(252, 229, 97, 0.3)",
   darkPrimary: "#a77501ff",
+  error: '#e73535ff'
 };
 
 export const GlobalStyle = createGlobalStyle`

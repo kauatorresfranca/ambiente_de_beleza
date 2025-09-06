@@ -46,7 +46,7 @@ const professionals = [
 
 const ProfessionalList = () => {
     return (
-        <S.Professionals>
+        <S.Professionals id='professionals'>
             <S.ProfessionalsTitle>Nossa <span>Equipe</span></S.ProfessionalsTitle>
             <S.ProfessionalsDescription>
                 Profissionais qualificados e experientes, dedicados a realçar sua beleza com carinho

@@ -4,15 +4,17 @@ type ButtonProps = {
   children: React.ReactNode
   primary?: boolean
   secundary?: boolean
-  className?: string 
+  className?: string
+  onClick?: React.MouseEventHandler<HTMLButtonElement> // Add this line
 }
 
-const Button = ({ children, primary, secundary, className }: ButtonProps) => {
+const Button = ({ children, primary, secundary, className, onClick }: ButtonProps) => {
   return (
-    <S.Button 
-      primary={primary} 
-      secundary={secundary} 
-      className={className} 
+    <S.Button
+      primary={primary}
+      secundary={secundary}
+      className={className}
+      onClick={onClick} // Pass the prop down to the S.Button styled component
     >
       {children}
     </S.Button>

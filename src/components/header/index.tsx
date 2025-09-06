@@ -5,8 +5,8 @@ import { useState } from 'react'
 const headerNavigationItems = [
   { path: '', navigationName: 'Início' },
   { path: 'services', navigationName: 'Nossos Serviços' },
-  { path: 'testimonials', navigationName: 'Depoimentos' },
   { path: 'professionals', navigationName: 'Profissionais' },
+  { path: 'testimonials', navigationName: 'Depoimentos' },
   { path: 'contact', navigationName: 'Contato' },
 ]
 

@@ -4,6 +4,7 @@ import { colors } from '../../../styles';
 type ButtonProps = {
     primary?: boolean
     secundary?: boolean
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export const Button = styled.div<ButtonProps>`
