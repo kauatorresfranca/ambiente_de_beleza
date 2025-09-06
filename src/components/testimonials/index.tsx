@@ -39,7 +39,7 @@ const Testimonials = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + total) % total)
 
   return (
-    <S.TestimonialsSection>
+    <S.TestimonialsSection id='testimonials'>
       <S.TestimonialsTitle>
         O que nossos <span>clientes dizem</span>
       </S.TestimonialsTitle>

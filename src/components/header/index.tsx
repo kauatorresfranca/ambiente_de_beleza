@@ -29,7 +29,7 @@ const Header = () => {
         
         <S.HeaderNavigationMobile className={menuMobileIsOpen ? 'active' : ''}>
           {headerNavigationItems.map((item) => (
-            <S.HeaderLink href={item.path} key={item.navigationName}>
+            <S.HeaderLink href={`#${item.path}`} key={item.navigationName}>
               {item.navigationName}
             </S.HeaderLink>
           ))}

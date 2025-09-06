@@ -87,7 +87,7 @@ const Services = [
 
 const ServiceList = () => {
   return (
-    <S.Services>
+    <S.Services id='services'>
         <S.ServicesTitle>
           Nossos <span>Serviços</span>
         </S.ServicesTitle>
