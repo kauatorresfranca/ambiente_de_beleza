@@ -1,26 +1,33 @@
 import { useState } from 'react'
 import * as S from './styles'
 
+import client1 from '../../assets/images/clients/client1.svg'
+import client2 from '../../assets/images/clients/client2.svg'
+import client3 from '../../assets/images/clients/client3.svg'
+import result1 from '../../assets/images/clients/result/result1.jpg'
+import result2 from '../../assets/images/clients/result/result2.jpg'
+
+
 const testimonials = [
   {
-    name: 'Ana Clara',
-    avatar: '/clientes/ana.jpg',
+    name: `Maiara Torres`,
+    avatar: `${client1}`,
     text: 'Meu cabelo ficou impecável! Atendimento atencioso e resultado acima do esperado.',
     rating: 5,
-    photoUrl: '/resultados/ana_after.jpg'
+    photoUrl: `${result2}`
   },
   {
-    name: 'Marcos Silva',
-    avatar: '/clientes/marcos.jpg',
+    name: `Carlos André`,
+    avatar: `${client2}`,
     text: 'Corte e barba alinhados do jeito que eu gosto. Voltarei com certeza!',
     rating: 5
   },
   {
-    name: 'Fernanda Souza',
-    avatar: '/clientes/fernanda.jpg',
+    name: `Julia Ferreira`,
+    avatar: `${client3}`,
     text: 'Profissionais cuidadosos, explicaram cada etapa. Amei a coloração nova!',
     rating: 5,
-    photoUrl: '/resultados/fernanda_after.jpg'
+    photoUrl: `${result1}`
   }
 ]
 

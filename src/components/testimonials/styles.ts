@@ -112,7 +112,6 @@ export const CardHeader = styled.div`
     height: 56px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid ${colors.primary};
   }
 
   h4 {
@@ -141,14 +140,18 @@ export const Text = styled.p`
 `
 
 export const ResultThumb = styled.div`
-  border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.06);
 
   img {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 220px;
     object-fit: cover;
+    border-radius: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
 

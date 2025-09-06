@@ -1,5 +1,5 @@
 import * as S from './styles'
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logo.svg'
 import { useState } from 'react'
 
 const headerNavigationItems = [
