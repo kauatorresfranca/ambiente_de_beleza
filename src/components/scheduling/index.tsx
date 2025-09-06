@@ -14,6 +14,17 @@ const BUSINESS_HOURS = Array.from(
     return `${hour}:${minutes}`;
   }
 );
+
+// Lista de serviços baseada no ServiceList
+const SERVICES = [
+  { value: 'nails', label: 'Unhas' },
+  { value: 'hair', label: 'Cabelo' },
+  { value: 'hair_chemistry', label: 'Química Capilar' },
+  { value: 'eyebrows_micropigmentation', label: 'Sobrancelhas & Micropigmentação' },
+  { value: 'aesthetics_wellness', label: 'Estética & Bem-estar' },
+  { value: 'special_packages', label: 'Pacotes Especiais' },
+];
+
 const WHATSAPP_NUMBER = '+558281218676';
 
 const Scheduling = () => {
@@ -62,13 +73,9 @@ const Scheduling = () => {
     if (!formData.fullName || !formData.service || !selectedDate || !formData.preferredTime) {
       return '#'; // Retorna um link inativo se os campos obrigatórios não estiverem preenchidos
     }
-    const message = `Olá, sou ${formData.fullName}, quero agendar uma sessão de ${
-      formData.service === 'haircut'
-        ? 'Corte de Cabelo'
-        : formData.service === 'coloring'
-        ? 'Coloração'
-        : 'Manicure'
-    } e gostaria de saber se tem horário disponível para dia ${formatDate(
+    const selectedService = SERVICES.find((service) => service.value === formData.service);
+    const serviceLabel = selectedService ? selectedService.label : formData.service;
+    const message = `Olá, sou ${formData.fullName}, quero agendar uma sessão de ${serviceLabel} e gostaria de saber se tem horário disponível para dia ${formatDate(
       selectedDate
     )} às ${formData.preferredTime}.${
       formData.notes.trim() ? ` Observações: ${formData.notes}` : ''
@@ -78,7 +85,7 @@ const Scheduling = () => {
   };
 
   return (
-    <S.Scheduling>
+    <S.Scheduling id='scheduling'>
       <div className="container">
         <S.SchedulingTitle>
           Agende seu <span>horário</span>
@@ -115,9 +122,11 @@ const Scheduling = () => {
                 onChange={handleInputChange}
               >
                 <option value="">Selecione um serviço</option>
-                <option value="haircut">Corte de Cabelo</option>
-                <option value="coloring">Coloração</option>
-                <option value="manicure">Manicure</option>
+                {SERVICES.map((service) => (
+                  <option key={service.value} value={service.value}>
+                    {service.label}
+                  </option>
+                ))}
               </select>
             </S.InputGroup>
           </S.SchedulingFormLine>
@@ -193,7 +202,7 @@ const Scheduling = () => {
               }}
             >
               <S.ProfessionalButton primary={true}>
-                Enviar via WhatsApp
+                Agendar
               </S.ProfessionalButton>
             </a>
           </S.SchedulingFormLine>

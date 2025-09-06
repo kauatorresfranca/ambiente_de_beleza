@@ -7,7 +7,7 @@ const headerNavigationItems = [
   { path: 'services', navigationName: 'Nossos Serviços' },
   { path: 'professionals', navigationName: 'Profissionais' },
   { path: 'testimonials', navigationName: 'Depoimentos' },
-  { path: 'contact', navigationName: 'Contato' },
+  { path: 'scheduling', navigationName: 'Contato' },
 ]
 
 const Header = () => {
@@ -34,9 +34,11 @@ const Header = () => {
             </S.HeaderLink>
           ))}
         </S.HeaderNavigationMobile>
-        <S.HeaderButton primary>
+        <a href="#scheduling">
+          <S.HeaderButton primary>
           <i className="ri-phone-line"></i> Agendar Horário
         </S.HeaderButton>
+        </a>
       </div>
     </S.Header>
   )

@@ -8,6 +8,7 @@ export const ProfessionalItem = styled.div`
     box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.1);
     transition: .3s ease;
     border: 1px solid ${colors.primary}40;
+    border-radius: 10px;
 
     &:hover {
         cursor: pointer;
