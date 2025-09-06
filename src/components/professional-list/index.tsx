@@ -1,6 +1,8 @@
 import ProfessionalItem from '../professional-item'
 import professional1 from '../../assets/profissional1.jpg'
 import professional2 from '../../assets/profissional2.jpg'
+import professional3 from '../../assets/profissional3.jpg'
+import professional4 from '../../assets/profissional4.jpg'
 import * as S from './styles'
 
 const professionals = [
@@ -23,7 +25,7 @@ const professionals = [
         specialties: ['Corte Masculino', 'Barba', 'Sobrancelha']
     },
     {
-        image: `${professional1}`,
+        image: `${professional3}`,
         name: 'Carla Souza',
         position: 'Manicure e Pedicure',
         description: 'Profissional em cuidados das mãos e pés, especialista em esmaltação em gel.',
@@ -32,7 +34,7 @@ const professionals = [
         specialties: ['Manicure', 'Pedicure', 'Esmaltação em Gel']
     },
     {
-        image: `${professional2}`,
+        image: `${professional4}`,
         name: 'Mariana Oliveira',
         position: 'Maquiadora Profissional',
         description: 'Maquiagens para festas, casamentos e ensaios fotográficos.',

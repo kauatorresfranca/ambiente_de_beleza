@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../styles';
+import { breakpoints, colors } from '../../../styles';
 
 export const Professionals = styled.div`
     display: flex;
@@ -41,6 +41,10 @@ export const ProfessionalList = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 24px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const ProfessionalItem = styled.div`

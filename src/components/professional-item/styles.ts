@@ -1,9 +1,20 @@
 import styled from 'styled-components';
 import { colors } from '../../../styles';
+import Button from '../button';
 
 export const ProfessionalItem = styled.div`
     display: flex;
     flex-direction: column;
+    box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.1);
+    transition: .3s ease;
+    border: 1px solid ${colors.primary}40;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+        border: 1px solid ${colors.primary}70;
+        transform: translateY(-2px) scale(1.04);
+    }
 `;
 
 export const ProfessionalImage = styled.img`
@@ -17,9 +28,10 @@ export const ProfessionalContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: start;
+    height: 100%;
     gap: 8px;
     padding: 24px 16px;
-    border: 1px solid black;
+    border: 1px solid ${colors.primary}40;
     border-radius: 0 0 10px 10px;
 `
 
@@ -92,4 +104,10 @@ export const ProfessionalSpecialtiesList = styled.ul`
         background-color: ${colors.lightPrimary};
         border-radius: 10px;
     }
+`
+
+export const ProfessionalButton = styled(Button)`
+    display: flex;
+    justify-content: center;
+    width: 100%;
 `

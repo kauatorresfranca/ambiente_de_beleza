@@ -34,6 +34,7 @@ const ProfessionalItem = ({image, name, position, description, experienceTime, i
                         )))}
                     </S.ProfessionalSpecialtiesList>
                 </S.ProfessionalSpecialties>
+                <S.ProfessionalButton secundary>Agendar com {name.split(' ')[0]}</S.ProfessionalButton>
             </S.ProfessionalContent>
         </S.ProfessionalItem>
     )

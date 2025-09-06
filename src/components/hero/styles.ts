@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HeroImage from "../../assets/hero.jpeg";
+import HeroImage from "../../assets/hero1.jpeg";
 import { breakpoints, colors } from "../../../styles";
 
 export const Hero = styled.section`
@@ -7,7 +7,7 @@ export const Hero = styled.section`
   background-image: url(${HeroImage});
   background-size: cover;
   background-position: center;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 112px);
   padding: 40px 20px;
 
   &::before {
