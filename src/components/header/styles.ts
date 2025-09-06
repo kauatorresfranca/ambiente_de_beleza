@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { breakpoints, colors } from "../../../styles";
+import Button from "../button";
 
 export const Header = styled.header`
   position: sticky;
@@ -15,7 +16,8 @@ export const Header = styled.header`
     justify-content: space-between;
   }
 
-  .menu-hamgurguer { 
+  .menu-hamgurguer {
+    position: absolute;
     display: none;
     font-size: 24px;
   }
@@ -30,6 +32,10 @@ export const Header = styled.header`
 export const HeaderLogo = styled.img`
   width: 80px;
   height: 80px;
+  
+  @media (max-width: ${breakpoints.tablet}) {
+    margin: 0 auto;
+  }
 `;
 
 export const HeaderNavigation = styled.nav`
@@ -52,6 +58,7 @@ export const HeaderNavigationMobile = styled.nav`
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  border-radius: 0 0 10px 10px;
 
   &.active {
     max-height: 300px;
@@ -87,20 +94,10 @@ export const HeaderLink = styled.a`
 }
 `;
 
-export const HeaderButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background-color: ${colors.primary};
-  color: ${colors.white};
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: .3s ease;
+export const HeaderButton = styled(Button)`
+  
 
-  &:hover {
-    background-color: ${colors.primary}90;
-    transform: scale(1.05);
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
   }
 `;

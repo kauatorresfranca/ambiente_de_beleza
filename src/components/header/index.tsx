@@ -1,5 +1,4 @@
 import * as S from './styles'
-import Button from '../button/index'
 import logo from '../../assets/logo.jpg'
 import { useState } from 'react'
 
@@ -35,9 +34,9 @@ const Header = () => {
             </S.HeaderLink>
           ))}
         </S.HeaderNavigationMobile>
-        <Button primary>
+        <S.HeaderButton primary>
           <i className="ri-phone-line"></i> Agendar Horário
-        </Button>
+        </S.HeaderButton>
       </div>
     </S.Header>
   )

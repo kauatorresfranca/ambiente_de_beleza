@@ -24,6 +24,7 @@ export const ServicesTitle = styled.h2`
         content: "";
         width: 70px;
         height: 4px;
+        border-radius: 10px;
         background-color: ${colors.primary};
         margin: 0 auto 16px auto;
     }
