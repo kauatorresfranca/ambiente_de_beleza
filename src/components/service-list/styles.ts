@@ -8,6 +8,7 @@ export const Services = styled.div`
     justify-content: center;
     padding: 48px 24px 0 24px;
     text-align: center;
+    background: ${colors.background};
 `;
 
 export const ServicesTitle = styled.h2`

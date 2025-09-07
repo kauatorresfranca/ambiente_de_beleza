@@ -143,7 +143,6 @@ export const Text = styled.p`
 
 export const ResultThumb = styled.div`
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.06);
 
   img {
     width: 100%;

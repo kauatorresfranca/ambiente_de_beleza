@@ -4,6 +4,7 @@ import { breakpoints, colors } from '../../../styles';
 export const Location = styled.div`
   padding: 48px 24px;
   text-align: center;
+  background: ${colors.background};
 
   .container {
     height: 400px;

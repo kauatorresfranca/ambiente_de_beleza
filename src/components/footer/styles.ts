@@ -4,18 +4,17 @@ import { breakpoints, colors } from '../../../styles';
 export const Footer = styled.div`
     padding: 24px;
     border-top: 1px solid ${colors.primary};
+    background: ${colors.background};
 
     .container {
         display: flex;
         justify-content: space-between;
-        max-width: 1200px; /* Limita a largura máxima para melhor centralização */
-        margin: 0 auto; /* Centraliza o container */
     }
 
     @media (max-width: ${breakpoints.tablet}) {
         .container {
             flex-direction: column;
-            align-items: center; /* Centraliza os itens em mobile */
+            align-items: start; 
         }
     }
 `;

@@ -4,6 +4,7 @@ import Button from '../button';
 
 export const Scheduling = styled.div`
   text-align: center;
+  background: ${colors.background};
 `;
 
 export const SchedulingTitle = styled.h2`

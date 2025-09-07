@@ -8,6 +8,7 @@ export const Professionals = styled.div`
     justify-content: center;
     padding: 48px 24px;
     text-align: center;
+    background: ${colors.background};
 
     @media (max-width: ${breakpoints.tablet}) {
         padding: 48px 0px;
