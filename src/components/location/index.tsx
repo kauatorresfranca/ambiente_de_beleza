@@ -21,7 +21,7 @@ const Location = () => {
     today >= 2 && today <= 6 && hour >= 9 && hour < 18; // terça (2) até sábado (6), entre 9h e 18h
 
   return (
-    <S.Location>
+    <S.Location id='location'>
       <S.LocationTitle>
         Aonde <span>Estamos</span>
       </S.LocationTitle>

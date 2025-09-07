@@ -46,6 +46,7 @@ const Footer = () => {
             <li><a href="#professionals" aria-label="Profissionais">Profissionais</a></li>
             <li><a href="#testimonials" aria-label="Depoimentos">Depoimentos</a></li>
             <li><a href="#scheduling" aria-label="Contato">Contato</a></li>
+            <li><a href="#location" aria-label="Contato">Localização</a></li>
           </ul>
         </S.FooterSection>
 

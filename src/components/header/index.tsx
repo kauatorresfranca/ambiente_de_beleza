@@ -8,6 +8,7 @@ const headerNavigationItems = [
   { path: 'professionals', navigationName: 'Profissionais' },
   { path: 'testimonials', navigationName: 'Depoimentos' },
   { path: 'scheduling', navigationName: 'Agendamento' },
+  { path: 'location', navigationName: 'Localização' },
 ];
 
 const Header = () => {
