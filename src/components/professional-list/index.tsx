@@ -4,7 +4,7 @@ import professional2 from '../../assets/images/profissionals/profissional2.jpg';
 import professional3 from '../../assets/images/profissionals/profissional3.jpg';
 import professional4 from '../../assets/images/profissionals/profissional4.jpg';
 import * as S from './styles';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const professionals = [
   {
@@ -48,9 +48,30 @@ const professionals = [
 const ProfessionalList = () => {
   const [current, setCurrent] = useState(0);
   const total = professionals.length;
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % total);
   const prevSlide = () => setCurrent((prev) => (prev - 1 + total) % total);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    const threshold = 50; // Minimum swipe distance in pixels
+
+    if (diff > threshold) {
+      nextSlide(); // Swipe left, go to next slide
+    } else if (diff < -threshold) {
+      prevSlide(); // Swipe right, go to previous slide
+    }
+  };
 
   return (
     <S.Professionals id="professionals">
@@ -83,7 +104,12 @@ const ProfessionalList = () => {
             <i className="ri-arrow-left-s-line" />
           </S.ArrowLeft>
 
-          <S.Slider style={{ transform: `translateX(-${current * 100}%)` }}>
+          <S.Slider
+            style={{ transform: `translateX(-${current * 100}%)` }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {professionals.map((professional) => (
               <S.Slide key={professional.name}>
                 <ProfessionalItem
