@@ -67,6 +67,11 @@ export const SchedulingFormLine = styled.div`
   justify-content: space-between;
   gap: 8px;
 
+  a {
+    margin: 0 auto;
+    width: 100%;
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
     flex-direction: column;
     gap: 24px;
@@ -87,7 +92,6 @@ export const InputGroup = styled.div`
 
   input,
   select,
-  textarea,
   .date-picker {
     width: 100%;
     padding: 8px;
@@ -100,12 +104,14 @@ export const InputGroup = styled.div`
       color: ${colors.text};
       opacity: 0.7;
     }
+
+    input.error,
+    select.error,
+  .date-picker.error {
+    border: 1px solid red;
+  }
   }
 
-  textarea {
-    resize: none;
-    min-height: 80px;
-  }
 
   select:disabled {
     background-color: #d3d3d3;
@@ -131,6 +137,7 @@ export const ProfessionalButton = styled(Button)`
     background-color: ${colors.primary};
     color: ${colors.white};
     border: none;
+
     &:hover {
       background-color: ${colors.primary}80;
     }
@@ -158,16 +165,20 @@ export const DatePickerWrapper = styled.div`
     border-bottom: none;
   }
 
-  .react-datepicker__current-month,
-  .react-datepicker__day-name {
+  .react-datepicker__current-month {
     color: ${colors.white};
+  }
+
+  .react-datepicker__day-name {
+    color: ${colors.primary};
   }
 
   .react-datepicker__day {
     color: ${colors.text};
+
     &:hover {
       background-color: ${colors.primary}80;
-      color: ${colors.white};
+      color: ${colors.primary};
     }
   }
 
@@ -178,7 +189,7 @@ export const DatePickerWrapper = styled.div`
   }
 
   .react-datepicker__day--disabled {
-    color: #d3d3d3;
+    color: gray;
     cursor: not-allowed;
     opacity: 0.5;
   }

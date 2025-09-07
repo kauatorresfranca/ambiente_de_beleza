@@ -20,6 +20,7 @@ export const ProfessionalItem = styled.div`
 
 export const ProfessionalImage = styled.img`
     object-fit: cover;
+    object-position: center 20%;
     height: 280px;
     width: 100%;
     border-radius: 10px 10px 0 0;

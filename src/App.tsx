@@ -5,6 +5,7 @@ import Scheduling from "./components/scheduling";
 import ServiceList from "./components/service-list";
 import Testimonials from "./components/testimonials";
 import Location from "./components/location";
+import Footer from "./components/footer";
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
         <Testimonials />
         <Scheduling />
         <Location />
+        <Footer />
       </>
   )
 } 

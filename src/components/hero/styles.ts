@@ -17,6 +17,10 @@ export const Hero = styled.section`
     background: rgba(0, 0, 0, 0.7); 
     z-index: 1;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    background-position: center;
+  }
 `;
 
 export const HeroContent = styled.div`

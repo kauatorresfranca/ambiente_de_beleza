@@ -28,6 +28,7 @@ export const TestimonialsTitle = styled.h2`
     content: '';
     width: 70px;
     height: 4px;
+    border-radius: 10px;
     background-color: ${colors.primary};
     margin: 0 auto 16px auto;
   }
@@ -137,6 +138,7 @@ export const Text = styled.p`
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 12px;
+  text-align: left;
 `
 
 export const ResultThumb = styled.div`

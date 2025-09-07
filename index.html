@@ -1,22 +1,81 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Meta descrição para SEO -->
-    <meta name="description" content="Salão de beleza em Maceió, no bairro São Jorge. Especializado em cabelos, unhas, estética e bem-estar. Realce sua beleza com profissionais qualificados.">
+    <!-- Título otimizado para SEO com palavras-chave locais -->
+    <title>Ambiente de Beleza - Salão de Beleza em Maceió, AL</title>
 
-    <!-- Google Fonts -->
+    <!-- Meta descrição otimizada com CTA e palavras-chave -->
+    <meta name="description" content="Ambiente de Beleza, o melhor salão de beleza em Maceió, AL. Especializado em cabelos, unhas, maquiagem e estética no bairro São Jorge. Agende agora e realce sua beleza!">
+
+    <!-- Meta keywords (opcional, mas ajuda em alguns motores de busca) -->
+    <meta name="keywords" content="salão de beleza Maceió, Ambiente de Beleza, corte de cabelo Maceió, manicure São Jorge, estética em Maceió">
+
+    <!-- Open Graph para compartilhamentos em redes sociais -->
+    <meta property="og:title" content="Ambiente de Beleza - Salão de Beleza em Maceió, AL" />
+    <meta property="og:description" content="Especializado em cabelos, unhas, estética e bem-estar no bairro São Jorge. Agende seu horário!" />
+    <meta property="og:image" content="/assets/logo.jpg" />
+    <meta property="og:url" content="https://www.ambientedebeleza.com.br" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Cards para melhor integração com X/Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ambiente de Beleza - Salão de Beleza em Maceió, AL" />
+    <meta name="twitter:description" content="Especializado em cabelos, unhas, estética e bem-estar no bairro São Jorge. Agende seu horário!" />
+    <meta name="twitter:image" content="/assets/logo.jpg" />
+
+    <!-- Link canônico para evitar duplicatas -->
+    <link rel="canonical" href="https://www.ambientedebeleza.com.br" />
+
+    <!-- Google Fonts (otimizado: reduzi para pesos essenciais para melhorar velocidade) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:wght@400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
 
-    <title>Ambiente de Beleza</title>
+    <!-- Schema Markup para SEO local (LocalBusiness) com endereço e horário atualizados -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Ambiente de Beleza",
+        "image": "https://www.ambientedebeleza.com.br/assets/logo.jpg",
+        "@id": "",
+        "url": "https://www.ambientedebeleza.com.br",
+        "telephone": "+55 (82) 1234-5678",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. José Aírton Gondim Lamenha, 250, São Jorge",
+          "addressLocality": "Maceió",
+          "postalCode": "57044-098",
+          "addressRegion": "AL",
+          "addressCountry": "BR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "description": "Salão de beleza em Maceió, AL, especializado em cortes, unhas, maquiagem e estética no bairro São Jorge.",
+        "sameAs": [
+          "https://www.instagram.com/ambientedebelezamaceio"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
