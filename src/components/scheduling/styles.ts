@@ -92,7 +92,6 @@ export const InputGroup = styled.div`
   }
 
   input,
-  select,
   .date-picker {
     width: 100%;
     padding: 8px;
@@ -106,17 +105,68 @@ export const InputGroup = styled.div`
       opacity: 0.7;
     }
 
-    input.error,
-    select.error,
-  .date-picker.error {
+    &.error {
+      border: 1px solid red;
+    }
+  }
+`;
+
+export const CustomSelectWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const CustomSelect = styled.div`
+  width: 100%;
+  padding: 8px;
+  border: 1px solid ${colors.primary};
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: ${colors.white};
+  color: ${colors.text};
+
+  &.error {
     border: 1px solid red;
   }
-  }
 
-
-  select:disabled {
+  &.disabled {
     background-color: #d3d3d3;
     cursor: not-allowed;
+  }
+
+  i {
+    color: ${colors.primary};
+  }
+`;
+
+export const CustomSelectOptions = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: ${colors.white};
+  border: 1px solid ${colors.primary};
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+`;
+
+export const CustomSelectOption = styled.div`
+  padding: 8px;
+  font-size: 14px;
+  color: ${colors.text};
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${colors.primary}80;
+    color: ${colors.primary};
   }
 `;
 
@@ -149,7 +199,7 @@ export const DatePickerWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative; /* Ancorar o popper */
+  position: relative;
 
   .react-datepicker {
     border: 1px solid ${colors.primary};

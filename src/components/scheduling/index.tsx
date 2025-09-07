@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ptBR } from 'date-fns/locale';
@@ -33,11 +33,14 @@ const Scheduling = () => {
     preferredTime: '',
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const [isTimeOpen, setIsTimeOpen] = useState(false);
+  const serviceRef = useRef<HTMLDivElement>(null);
+  const timeRef = useRef<HTMLDivElement>(null);
 
   // Read service from URL hash query parameter on mount and hash change
   useEffect(() => {
     const updateServiceFromUrl = () => {
-      // Parse query parameters from hash (e.g., #scheduling?service=aesthetics_wellness)
       const hash = window.location.hash;
       const queryString = hash.split('?')[1] || '';
       const params = new URLSearchParams(queryString);
@@ -49,10 +52,23 @@ const Scheduling = () => {
       }
     };
 
-    updateServiceFromUrl(); // Initial check
-    window.addEventListener('hashchange', updateServiceFromUrl); // Listen for hash changes
+    updateServiceFromUrl();
+    window.addEventListener('hashchange', updateServiceFromUrl);
+    return () => window.removeEventListener('hashchange', updateServiceFromUrl);
+  }, []);
 
-    return () => window.removeEventListener('hashchange', updateServiceFromUrl); // Cleanup
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (serviceRef.current && !serviceRef.current.contains(event.target as Node)) {
+        setIsServiceOpen(false);
+      }
+      if (timeRef.current && !timeRef.current.contains(event.target as Node)) {
+        setIsTimeOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const filterBusinessDays = (date: Date) => BUSINESS_DAYS.includes(date.getDay());
@@ -73,11 +89,18 @@ const Scheduling = () => {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: '' }));
+  };
+
+  const handleSelect = (name: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: '' }));
+    if (name === 'service') setIsServiceOpen(false);
+    if (name === 'preferredTime') setIsTimeOpen(false);
   };
 
   const validateField = (name: string, value: string | Date | null) => {
@@ -147,21 +170,29 @@ const Scheduling = () => {
 
             <S.InputGroup>
               <label htmlFor="service">Serviço Desejado *</label>
-              <select
-                id="service"
-                name="service"
-                value={formData.service}
-                onChange={handleInputChange}
-                onBlur={() => validateField('service', formData.service)}
-                className={errors.service ? 'error' : ''}
-              >
-                <option value="">Selecione um serviço</option>
-                {SERVICES.map((service) => (
-                  <option key={service.value} value={service.value}>
-                    {service.label}
-                  </option>
-                ))}
-              </select>
+              <S.CustomSelectWrapper ref={serviceRef}>
+                <S.CustomSelect
+                  className={errors.service ? 'error' : ''}
+                  onClick={() => setIsServiceOpen(!isServiceOpen)}
+                >
+                  {formData.service
+                    ? SERVICES.find((s) => s.value === formData.service)?.label || 'Selecione um serviço'
+                    : 'Selecione um serviço'}
+                  <i className={`ri-arrow-${isServiceOpen ? 'up' : 'down'}-s-line`} />
+                </S.CustomSelect>
+                {isServiceOpen && (
+                  <S.CustomSelectOptions>
+                    {SERVICES.map((service) => (
+                      <S.CustomSelectOption
+                        key={service.value}
+                        onClick={() => handleSelect('service', service.value)}
+                      >
+                        {service.label}
+                      </S.CustomSelectOption>
+                    ))}
+                  </S.CustomSelectOptions>
+                )}
+              </S.CustomSelectWrapper>
               {errors.service && <S.ErrorMessage>{errors.service}</S.ErrorMessage>}
             </S.InputGroup>
           </S.SchedulingFormLine>
@@ -195,22 +226,27 @@ const Scheduling = () => {
 
             <S.InputGroup>
               <label htmlFor="preferredTime">Horário Preferido *</label>
-              <select
-                id="preferredTime"
-                name="preferredTime"
-                disabled={!selectedDate}
-                value={formData.preferredTime}
-                onChange={handleInputChange}
-                onBlur={() => validateField('preferredTime', formData.preferredTime)}
-                className={errors.preferredTime ? 'error' : ''}
-              >
-                <option value="">Selecione um horário</option>
-                {BUSINESS_HOURS.map((hour) => (
-                  <option key={hour} value={hour}>
-                    {hour}
-                  </option>
-                ))}
-              </select>
+              <S.CustomSelectWrapper ref={timeRef}>
+                <S.CustomSelect
+                  className={`${!selectedDate ? 'disabled' : ''} ${errors.preferredTime ? 'error' : ''}`}
+                  onClick={() => selectedDate && setIsTimeOpen(!isTimeOpen)}
+                >
+                  {formData.preferredTime || 'Selecione um horário'}
+                  <i className={`ri-arrow-${isTimeOpen ? 'up' : 'down'}-s-line`} />
+                </S.CustomSelect>
+                {isTimeOpen && (
+                  <S.CustomSelectOptions>
+                    {BUSINESS_HOURS.map((hour) => (
+                      <S.CustomSelectOption
+                        key={hour}
+                        onClick={() => handleSelect('preferredTime', hour)}
+                      >
+                        {hour}
+                      </S.CustomSelectOption>
+                    ))}
+                  </S.CustomSelectOptions>
+                )}
+              </S.CustomSelectWrapper>
               {errors.preferredTime && <S.ErrorMessage>{errors.preferredTime}</S.ErrorMessage>}
             </S.InputGroup>
           </S.SchedulingFormLine>

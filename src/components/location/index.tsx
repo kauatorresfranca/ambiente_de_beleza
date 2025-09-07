@@ -26,7 +26,7 @@ const Location = () => {
         Aonde <span>Estamos</span>
       </S.LocationTitle>
       <S.LocationDescription>
-        Venha nos visitar, esperamos por você !
+        Visite-nos em nosso espaço acolhedor e transforme sua beleza com a nossa equipe!
       </S.LocationDescription>
       <div className="container">
         <S.LocationInfoList>

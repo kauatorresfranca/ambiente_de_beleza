@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import * as S from './styles'
 
 import client1 from '../../assets/images/clients/client1.svg'
@@ -6,7 +6,6 @@ import client2 from '../../assets/images/clients/client2.svg'
 import client3 from '../../assets/images/clients/client3.svg'
 import result1 from '../../assets/images/clients/result/result1.jpg'
 import result2 from '../../assets/images/clients/result/result2.jpg'
-
 
 const testimonials = [
   {
@@ -34,9 +33,30 @@ const testimonials = [
 const Testimonials = () => {
   const [current, setCurrent] = useState(0)
   const total = testimonials.length
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % total)
   const prevSlide = () => setCurrent((prev) => (prev - 1 + total) % total)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current
+    const threshold = 50 // Minimum swipe distance in pixels
+
+    if (diff > threshold) {
+      nextSlide() // Swipe left, go to next slide
+    } else if (diff < -threshold) {
+      prevSlide() // Swipe right, go to previous slide
+    }
+  }
 
   return (
     <S.TestimonialsSection id='testimonials'>
@@ -82,7 +102,12 @@ const Testimonials = () => {
             <i className="ri-arrow-left-s-line" />
           </S.ArrowLeft>
 
-          <S.Slider style={{ transform: `translateX(-${current * 100}%)` }}>
+          <S.Slider
+            style={{ transform: `translateX(-${current * 100}%)` }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {testimonials.map((t) => (
               <S.Slide key={t.name}>
                 <S.Card>

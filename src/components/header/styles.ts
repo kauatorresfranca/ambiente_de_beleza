@@ -52,6 +52,9 @@ export const HeaderNavigationMobile = styled.nav`
   top: 100%;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   background-color: ${colors.background};
   overflow: hidden;
   max-height: 0;
@@ -66,10 +69,9 @@ export const HeaderNavigationMobile = styled.nav`
     visibility: visible;
   }
 
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 0 16px;
+  a {
+    padding: 8px 12px;
+  }
 `;
 
 export const HeaderLink = styled.a`
