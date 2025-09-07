@@ -45,7 +45,7 @@ export const HeaderNavigation = styled.nav`
   @media (max-width: ${breakpoints.tablet}) {
     display: none;
   }
-`
+`;
 
 export const HeaderNavigationMobile = styled.nav`
   position: absolute;
@@ -72,7 +72,6 @@ export const HeaderNavigationMobile = styled.nav`
   padding: 0 16px;
 `;
 
-
 export const HeaderLink = styled.a`
   margin: 0 12px;
   font-size: 16px;
@@ -91,12 +90,10 @@ export const HeaderLink = styled.a`
   &.active {
     color: ${colors.primary};
     border-bottom: 2px solid ${colors.primary};
-}
+  }
 `;
 
 export const HeaderButton = styled(Button)`
-  
-
   @media (max-width: ${breakpoints.tablet}) {
     display: none;
   }

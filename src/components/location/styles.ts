@@ -87,7 +87,13 @@ export const LocationInfo = styled.div`
     text-align: left;
 
     &.closed {
-      color: red;
+    color: red;
+    font-weight: bold;
+  }
+
+    &.open {
+      color: green;
+      font-weight: bold;
     }
   }
 

@@ -20,6 +20,10 @@ export const colors = {
 };
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-padding-top: 112px;
+  }
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -36,5 +40,4 @@ export const GlobalStyle = createGlobalStyle`
     max-width: ${breakpoints.desktop};
     margin: 0 auto;
   }
-
 `;
