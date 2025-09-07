@@ -29,10 +29,8 @@ export const ProfessionalImage = styled.img`
 export const ProfessionalContent = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: start;
     height: 100%;
-    gap: 8px;
-    padding: 24px 16px;
+    padding: 16px 16px 24px 16px;
     border: 1px solid ${colors.primary}40;
     border-radius: 0 0 10px 10px;
 `
@@ -41,12 +39,16 @@ export const ProfessionalName = styled.h3`
     font-size: 20px;
     font-weight: bold;
     color: ${colors.title};
+    text-align: left;
+    margin-bottom: 2px;
 `
 
 export const ProfessionalPosition = styled.h4`
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     color: ${colors.primary};
+    text-align: left;
+    margin-bottom: 8px;
 `
 
 export const ProfessionalDescription = styled.p`
@@ -54,11 +56,14 @@ export const ProfessionalDescription = styled.p`
     font-weight: 400;
     color: ${colors.text};
     text-align: left;
+    margin-bottom: 8px;
 `
 
 export const ProfessionalAdicionals = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
     gap: 8px;
 
     i {

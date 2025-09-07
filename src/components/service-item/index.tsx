@@ -1,16 +1,29 @@
-import { useState } from 'react'
-import * as S from './styles'
+import { useState } from 'react';
+import * as S from './styles';
 
 type ServiceItemProps = {
-  iconClassName: string
-  title: string
-  description: string
-  price: string
-  subServices: string[]
-}
+  iconClassName: string;
+  title: string;
+  description: string;
+  price: string;
+  subServices: string[];
+  serviceValue: string;
+};
 
-const ServiceItem = ({ iconClassName, title, price, description, subServices }: ServiceItemProps) => {
-  const [showAll, setShowAll] = useState(false)
+const ServiceItem = ({ iconClassName, title, price, description, subServices, serviceValue }: ServiceItemProps) => {
+  const [showAll, setShowAll] = useState(false);
+
+  const handleScheduleClick = () => {
+    // Update URL with service query parameter
+    window.history.pushState(null, '', `#scheduling?service=${serviceValue}`);
+    // Trigger hashchange event to notify Scheduling component
+    window.dispatchEvent(new Event('hashchange'));
+    // Scroll to scheduling section
+    const schedulingSection = document.getElementById('scheduling');
+    if (schedulingSection) {
+      schedulingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <S.ServiceItem>
@@ -25,17 +38,17 @@ const ServiceItem = ({ iconClassName, title, price, description, subServices }: 
         ))}
 
         {subServices.length > 3 && (
-          <p
-            onClick={() => setShowAll(!showAll)}
-          >
+          <p onClick={() => setShowAll(!showAll)}>
             {showAll ? 'ver menos' : 'ver mais'}
           </p>
         )}
       </S.ServiceJobList>
 
-      <S.ServiceButton secundary>Agendar Serviço</S.ServiceButton>
+      <button onClick={handleScheduleClick}>
+        <S.ServiceButton secundary>Agendar Serviço</S.ServiceButton>
+      </button>
     </S.ServiceItem>
-  )
-}
+  );
+};
 
-export default ServiceItem
+export default ServiceItem;

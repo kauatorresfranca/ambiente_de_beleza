@@ -15,9 +15,6 @@ const ProfessionalItem = ({image, name, position, description, experienceTime, i
         <S.ProfessionalItem>
             <S.ProfessionalImage src={image} alt="" />
             <S.ProfessionalContent>
-                <S.ProfessionalName>{name}</S.ProfessionalName>
-                <S.ProfessionalPosition>{position}</S.ProfessionalPosition>
-                <S.ProfessionalDescription>{description}</S.ProfessionalDescription>
                 <S.ProfessionalAdicionals>
                     <S.ProfessionalAdicionalsItem>
                         <i className='ri-time-line'></i> <p>{experienceTime}+ anos</p>
@@ -26,6 +23,9 @@ const ProfessionalItem = ({image, name, position, description, experienceTime, i
                         {isCertified ? (<><i className="ri-award-line"></i> <p> Certificado</p></>) : (<></>)}
                     </S.ProfessionalAdicionalsItem>
                 </S.ProfessionalAdicionals>
+                <S.ProfessionalName>{name}</S.ProfessionalName>
+                <S.ProfessionalPosition>{position}</S.ProfessionalPosition>
+                <S.ProfessionalDescription>{description}</S.ProfessionalDescription>
                 <S.ProfessionalSpecialties>
                     <h4>Especialidades:</h4>
                     <S.ProfessionalSpecialtiesList>

@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ptBR } from 'date-fns/locale';
@@ -32,8 +32,28 @@ const Scheduling = () => {
     service: '',
     preferredTime: '',
   });
-
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  // Read service from URL hash query parameter on mount and hash change
+  useEffect(() => {
+    const updateServiceFromUrl = () => {
+      // Parse query parameters from hash (e.g., #scheduling?service=aesthetics_wellness)
+      const hash = window.location.hash;
+      const queryString = hash.split('?')[1] || '';
+      const params = new URLSearchParams(queryString);
+      const service = params.get('service');
+      if (service && SERVICES.some((s) => s.value === service)) {
+        setFormData((prev) => ({ ...prev, service }));
+      } else {
+        setFormData((prev) => ({ ...prev, service: '' }));
+      }
+    };
+
+    updateServiceFromUrl(); // Initial check
+    window.addEventListener('hashchange', updateServiceFromUrl); // Listen for hash changes
+
+    return () => window.removeEventListener('hashchange', updateServiceFromUrl); // Cleanup
+  }, []);
 
   const filterBusinessDays = (date: Date) => BUSINESS_DAYS.includes(date.getDay());
 
@@ -57,7 +77,7 @@ const Scheduling = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: '' })); // limpa erro ao digitar
+    setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
   const validateField = (name: string, value: string | Date | null) => {
@@ -96,7 +116,7 @@ const Scheduling = () => {
   };
 
   return (
-    <S.Scheduling id='scheduling'>
+    <S.Scheduling id="scheduling">
       <div className="container">
         <S.SchedulingTitle>
           Agende seu <span>horário</span>

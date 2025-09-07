@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Header from "./components/header";
 import Hero from "./components/hero";
 import ProfessionalList from "./components/professional-list";
@@ -8,20 +9,27 @@ import Location from "./components/location";
 import Footer from "./components/footer";
 
 function App() {
-  
-
   return (
-      <>
-        <Header />
-        <Hero />
-        <ServiceList />
-        <ProfessionalList />
-        <Testimonials />
-        <Scheduling />
-        <Location />
-        <Footer />
-      </>
-  )
-} 
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <Header />
+            <div id="home">
+              <Hero />
+            </div>
+            <ServiceList />
+            <ProfessionalList />
+            <Testimonials />
+            <Scheduling />
+            <Location />
+            <Footer />
+          </>
+        }
+      />
+    </Routes>
+  );
+}
 
-export default App
+export default App;

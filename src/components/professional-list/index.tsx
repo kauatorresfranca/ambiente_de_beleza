@@ -29,7 +29,7 @@ const professionals = [
     image: `${professional3}`,
     name: 'Carla Souza',
     position: 'Manicure e Pedicure',
-    description: 'Profissional em cuidados das mãos e pés, especialista em esmaltação em gel.',
+    description: 'cuidados das mãos e pés, especialista em esmaltação em gel.',
     experienceTime: '6',
     isCertified: false,
     specialties: ['Manicure', 'Pedicure', 'Esmaltação em Gel'],

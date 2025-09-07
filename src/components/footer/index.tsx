@@ -1,16 +1,17 @@
 import * as S from './styles'
+import logo from '../../assets/logo.svg'
 
 const Footer = () => {
   return (
     <S.Footer>
       <div className="container">
         <S.FooterSection>
-          <img src="" alt="" />
+          <img src={logo} alt="" />
           <p>Transformando sua beleza com carinho e profissionalismo.</p>
           <S.FooterSocial>
-              <i className="ri-instagram-line"></i>
-              <i className="ri-facebook-line"></i>
-              <i className="ri-whatsapp-line"></i>
+              <a href=""><i className="ri-instagram-line"></i></a>
+              <a href=""><i className="ri-facebook-line"></i></a>
+              <a href=""><i className="ri-whatsapp-line"></i></a>
           </S.FooterSocial>
         </S.FooterSection>
         <S.FooterSection>

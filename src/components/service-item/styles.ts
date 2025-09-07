@@ -25,6 +25,10 @@ export const ServiceItem = styled.li`
         }
     }
 
+    a {
+        width: 100%;
+    }
+
     i {
         font-size: 32px;
         background-color: ${colors.lightPrimary};

@@ -1,10 +1,10 @@
-import ServiceItem from '../service-item'
-import * as S from './styles'
+import ServiceItem from '../service-item';
+import * as S from './styles';
 
 const Services = [
   {
     id: 1,
-    iconClassName: 'ri-sparkling-2-line', // brilho = unhas feitas
+    iconClassName: 'ri-sparkling-2-line',
     title: 'Unhas',
     description: 'Beleza até a ponta dos dedos! Do cuidado básico ao luxo das técnicas modernas.',
     price: 'A partir de R$ 49,90',
@@ -17,10 +17,11 @@ const Services = [
       'Unha postiça',
       'Spa dos pés',
     ],
+    serviceValue: 'nails',
   },
   {
     id: 2,
-    iconClassName: 'ri-scissors-2-line', // tesoura = corte de cabelo
+    iconClassName: 'ri-scissors-2-line',
     title: 'Cabelo',
     description: 'Transforme seus fios com cortes modernos, escovas incríveis e tratamentos revitalizantes.',
     price: 'A partir de R$ 79,90',
@@ -39,18 +40,20 @@ const Services = [
       'Progressiva orgânica',
       'Terapia capilar',
     ],
+    serviceValue: 'hair',
   },
   {
     id: 3,
-    iconClassName: 'ri-palette-line', // paleta de cores = química capilar
+    iconClassName: 'ri-palette-line',
     title: 'Química Capilar',
     description: 'Cores vibrantes, mechas iluminadas e técnicas modernas para renovar o visual.',
     price: 'A partir de R$ 120,00',
     subServices: ['Luzes', 'Mechas', 'Moreno iluminado', 'Coloração', 'Permanente afro'],
+    serviceValue: 'hair_chemistry',
   },
   {
     id: 4,
-    iconClassName: 'ri-eye-line', // olhar = sobrancelhas e micropigmentação
+    iconClassName: 'ri-eye-line',
     title: 'Sobrancelhas & Micropigmentação',
     description: 'Destaque seu olhar com design perfeito e técnicas avançadas de micropigmentação.',
     price: 'A partir de R$ 59,90',
@@ -60,10 +63,11 @@ const Services = [
       'Micropigmentação de olhos',
       'Micropigmentação de lábios',
     ],
+    serviceValue: 'eyebrows_micropigmentation',
   },
   {
     id: 5,
-    iconClassName: 'ri-heart-3-line', // brilho/cuidado = estética e pele
+    iconClassName: 'ri-heart-3-line',
     title: 'Estética & Bem-estar',
     description: 'Tratamentos de pele e cuidados estéticos para renovar sua beleza natural.',
     price: 'Sob consulta',
@@ -74,23 +78,25 @@ const Services = [
       'Jato de plasma: manchas e acne',
       'Jato de plasma: flacidez e estrias',
     ],
+    serviceValue: 'aesthetics_wellness',
   },
   {
     id: 6,
-    iconClassName: 'ri-gift-line', // presente = pacotes especiais
+    iconClassName: 'ri-gift-line',
     title: 'Pacotes Especiais',
     description: 'Combine serviços exclusivos e viva uma experiência de beleza completa.',
     price: 'A partir de R$ 199,90',
     subServices: ['Dia da Noiva', 'Dia da Princesa', 'Pacote Relax', 'Pacote Premium'],
+    serviceValue: 'special_packages',
   },
-]
+];
 
 const ServiceList = () => {
   return (
-    <S.Services id='services'>
-        <S.ServicesTitle>
-          Nossos <span>Serviços</span>
-        </S.ServicesTitle>
+    <S.Services id="services">
+      <S.ServicesTitle>
+        Nossos <span>Serviços</span>
+      </S.ServicesTitle>
       <div className="container">
         <S.ServicesDescription>
           Do cuidado diário a momentos especiais, temos serviços personalizados para valorizar ainda mais sua beleza.
@@ -104,12 +110,13 @@ const ServiceList = () => {
               iconClassName={service.iconClassName}
               price={service.price}
               subServices={service.subServices}
+              serviceValue={service.serviceValue}
             />
           ))}
         </S.ServicesList>
       </div>
     </S.Services>
-  )
-}
+  );
+};
 
-export default ServiceList
+export default ServiceList;
