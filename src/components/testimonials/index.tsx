@@ -44,7 +44,7 @@ const Testimonials = () => {
         O que nossos <span>clientes dizem</span>
       </S.TestimonialsTitle>
       <S.TestimonialsDescription>
-        Provas reais, resultados reais — direto de quem já passou por aqui.
+        Depoimentos de clientes que transformaram sua beleza e bem-estar conosco.
       </S.TestimonialsDescription>
 
       <div className="container">

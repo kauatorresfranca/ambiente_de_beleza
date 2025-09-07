@@ -16,9 +16,6 @@ const Footer = () => {
         </S.FooterSection>
         <S.FooterSection>
           <h4>Navegação</h4>
-        </S.FooterSection>
-        <S.FooterSection> 
-          <h4>Contato</h4>
           <ul>
             <li>Início</li>
             <li>Serviços</li>
@@ -26,6 +23,11 @@ const Footer = () => {
             <li>Depoimentos</li>
             <li>Contato</li>
           </ul>
+        </S.FooterSection>
+        <S.FooterSection> 
+          <h4>Contato</h4>
+          <h5><i className="ri-phone-line"></i>(82) 98121-8676</h5>
+          <h5><i className="ri-mail-line"></i>contato@ambientedebeleza.com</h5>
         </S.FooterSection>
       </div>
     </S.Footer>

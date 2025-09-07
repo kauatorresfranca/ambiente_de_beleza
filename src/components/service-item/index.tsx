@@ -43,10 +43,7 @@ const ServiceItem = ({ iconClassName, title, price, description, subServices, se
           </p>
         )}
       </S.ServiceJobList>
-
-      <button onClick={handleScheduleClick}>
-        <S.ServiceButton secundary>Agendar Serviço</S.ServiceButton>
-      </button>
+        <S.ServiceButton onClick={handleScheduleClick} secundary>Agendar Serviço</S.ServiceButton>
     </S.ServiceItem>
   );
 };
