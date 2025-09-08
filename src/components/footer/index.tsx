@@ -17,7 +17,7 @@ const Footer = () => {
           <S.FooterDescription>Transformando sua beleza com carinho e profissionalismo.</S.FooterDescription>
           <S.FooterSocial>
             <a
-              href="https://instagram.com/ambientedebeleza"
+              href="https://instagram.com/ambiente_de_beleza"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visite nosso Instagram"
