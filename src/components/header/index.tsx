@@ -1,6 +1,7 @@
 import * as S from './styles';
 import logo from '../../assets/logo.svg';
 import { useState, useEffect } from 'react';
+import { RiCloseLargeFill, RiMenu2Line, RiPhoneLine } from 'react-icons/ri';
 
 const headerNavigationItems = [
   { path: '', navigationName: 'Início' },
@@ -59,27 +60,24 @@ const Header = () => {
   return (
     <S.Header>
       <div className="container">
-        {/* Botão hambúrguer */}
         {menuMobileIsOpen ? (
-          <i
-            className="ri-close-large-fill menu-hamgurguer"
+          <RiCloseLargeFill
+            className="menu-hamgurguer"
             onClick={toggleMenu}
             role="button"
             aria-label="Fechar menu"
           />
         ) : (
-          <i
-            className="ri-menu-2-line menu-hamgurguer"
+          <RiMenu2Line
+            className="menu-hamgurguer"
             onClick={toggleMenu}
             role="button"
             aria-label="Abrir menu"
           />
         )}
 
-        {/* Logo */}
         <S.HeaderLogo src={logo} alt="Logo Ambiente de Beleza, salão de beleza em Maceió, AL" />
 
-        {/* Navegação desktop */}
         <S.HeaderNavigation>
           {headerNavigationItems.map((item) => (
             <S.HeaderLink
@@ -92,7 +90,6 @@ const Header = () => {
           ))}
         </S.HeaderNavigation>
 
-        {/* Navegação mobile */}
         <S.HeaderNavigationMobile className={menuMobileIsOpen ? 'active' : ''}>
           {headerNavigationItems.map((item) => (
             <S.HeaderLink
@@ -106,15 +103,13 @@ const Header = () => {
           ))}
         </S.HeaderNavigationMobile>
 
-        {/* Botão Agendar */}
         <a href="#scheduling" rel="noopener noreferrer">
           <S.HeaderButton primary>
-            <i className="ri-phone-line"></i> Agendar Horário
+            <RiPhoneLine /> Agendar Horário
           </S.HeaderButton>
         </a>
       </div>
     </S.Header>
   );
 };
-
 export default Header;

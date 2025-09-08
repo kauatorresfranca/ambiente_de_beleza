@@ -1,4 +1,5 @@
 import * as S from './styles';
+import { RiMapPinLine, RiTimeLine } from 'react-icons/ri';
 
 const Location = () => {
   const now = new Date();
@@ -17,11 +18,10 @@ const Location = () => {
   ];
 
   // Verifica se está aberto
-  const isOpen =
-    today >= 2 && today <= 6 && hour >= 9 && hour < 18; // terça (2) até sábado (6), entre 9h e 18h
+  const isOpen = today >= 2 && today <= 6 && hour >= 9 && hour < 18; // terça (2) até sábado (6), entre 9h e 18h
 
   return (
-    <S.Location id='location'>
+    <S.Location id="location">
       <S.LocationTitle>
         Aonde <span>Estamos</span>
       </S.LocationTitle>
@@ -32,7 +32,7 @@ const Location = () => {
         <S.LocationInfoList>
           <S.LocationInfo>
             <h2>
-              <i className="ri-map-pin-line"></i>Nosso Endereço
+              <RiMapPinLine /> Nosso Endereço
             </h2>
             <p>Av. José Aírton Gondim Lamenha, 250</p>
             <p>São Jorge, Maceió - AL</p>
@@ -41,7 +41,7 @@ const Location = () => {
 
           <S.LocationInfo>
             <h2>
-              <i className="ri-time-line"></i>Horário de Funcionamento
+              <RiTimeLine /> Horário de Funcionamento
             </h2>
             <div>
               <p>Terça à Sábado</p>
@@ -49,9 +49,7 @@ const Location = () => {
             </div>
             <div>
               <p>{weekDays[today]} (hoje)</p>
-              <p className={isOpen ? 'open' : 'closed'}>
-                {isOpen ? 'Aberto' : 'Fechado'}
-              </p>
+              <p className={isOpen ? 'open' : 'closed'}>{isOpen ? 'Aberto' : 'Fechado'}</p>
             </div>
           </S.LocationInfo>
         </S.LocationInfoList>

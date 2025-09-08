@@ -1,65 +1,65 @@
-import { useState, useRef } from 'react'
-import * as S from './styles'
-
-import client1 from '../../assets/images/clients/client1.svg'
-import client2 from '../../assets/images/clients/client2.svg'
-import client3 from '../../assets/images/clients/client3.svg'
-import result1 from '../../assets/images/clients/result/result1.jpg'
-import result2 from '../../assets/images/clients/result/result2.jpg'
+import { useState, useRef } from 'react';
+import * as S from './styles';
+import client1 from '../../assets/images/clients/client1.svg';
+import client2 from '../../assets/images/clients/client2.svg';
+import client3 from '../../assets/images/clients/client3.svg';
+import result1 from '../../assets/images/clients/result/result1.jpg';
+import result2 from '../../assets/images/clients/result/result2.jpg';
+import { RiStarFill, RiStarLine, RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 
 const testimonials = [
   {
-    name: `Maiara Torres`,
-    avatar: `${client1}`,
+    name: 'Maiara Torres',
+    avatar: client1,
     text: 'Meu cabelo ficou impecável! Atendimento atencioso e resultado acima do esperado.',
     rating: 5,
-    photoUrl: `${result2}`
+    photoUrl: result2,
   },
   {
-    name: `Carlos André`,
-    avatar: `${client2}`,
+    name: 'Carlos André',
+    avatar: client2,
     text: 'Corte e barba alinhados do jeito que eu gosto. Voltarei com certeza!',
-    rating: 5
+    rating: 5,
   },
   {
-    name: `Julia Ferreira`,
-    avatar: `${client3}`,
+    name: 'Julia Ferreira',
+    avatar: client3,
     text: 'Profissionais cuidadosos, explicaram cada etapa. Amei a coloração nova!',
     rating: 5,
-    photoUrl: `${result1}`
-  }
-]
+    photoUrl: result1,
+  },
+];
 
 const Testimonials = () => {
-  const [current, setCurrent] = useState(0)
-  const total = testimonials.length
-  const touchStartX = useRef(0)
-  const touchEndX = useRef(0)
+  const [current, setCurrent] = useState(0);
+  const total = testimonials.length;
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % total)
-  const prevSlide = () => setCurrent((prev) => (prev - 1 + total) % total)
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % total);
+  const prevSlide = () => setCurrent((prev) => (prev - 1 + total) % total);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
-  }
+    touchStartX.current = e.touches[0].clientX;
+  };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX
-  }
+    touchEndX.current = e.touches[0].clientX;
+  };
 
   const handleTouchEnd = () => {
-    const diff = touchStartX.current - touchEndX.current
-    const threshold = 50 // Minimum swipe distance in pixels
+    const diff = touchStartX.current - touchEndX.current;
+    const threshold = 50; // Minimum swipe distance in pixels
 
     if (diff > threshold) {
-      nextSlide() // Swipe left, go to next slide
+      nextSlide(); // Swipe left, go to next slide
     } else if (diff < -threshold) {
-      prevSlide() // Swipe right, go to previous slide
+      prevSlide(); // Swipe right, go to previous slide
     }
-  }
+  };
 
   return (
-    <S.TestimonialsSection id='testimonials'>
+    <S.TestimonialsSection id="testimonials">
       <S.TestimonialsTitle>
         O que nossos <span>clientes dizem</span>
       </S.TestimonialsTitle>
@@ -78,10 +78,7 @@ const Testimonials = () => {
                   <h4>{t.name}</h4>
                   <S.Rating aria-label={`${t.rating ?? 5} de 5`}>
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <i
-                        key={i}
-                        className={i < (t.rating ?? 5) ? 'ri-star-fill' : 'ri-star-line'}
-                      />
+                      <i key={i}>{i < (t.rating ?? 5) ? <RiStarFill /> : <RiStarLine />}</i>
                     ))}
                   </S.Rating>
                 </div>
@@ -99,7 +96,7 @@ const Testimonials = () => {
         {/* Slider apenas no mobile */}
         <S.MobileWrapper>
           <S.ArrowLeft onClick={prevSlide}>
-            <i className="ri-arrow-left-s-line" />
+            <RiArrowLeftSLine />
           </S.ArrowLeft>
 
           <S.Slider
@@ -117,10 +114,7 @@ const Testimonials = () => {
                       <h4>{t.name}</h4>
                       <S.Rating aria-label={`${t.rating ?? 5} de 5`}>
                         {Array.from({ length: 5 }).map((_, i) => (
-                          <i
-                            key={i}
-                            className={i < (t.rating ?? 5) ? 'ri-star-fill' : 'ri-star-line'}
-                          />
+                          <i key={i}>{i < (t.rating ?? 5) ? <RiStarFill /> : <RiStarLine />}</i>
                         ))}
                       </S.Rating>
                     </div>
@@ -137,7 +131,7 @@ const Testimonials = () => {
           </S.Slider>
 
           <S.ArrowRight onClick={nextSlide}>
-            <i className="ri-arrow-right-s-line" />
+            <RiArrowRightSLine />
           </S.ArrowRight>
 
           <S.Indicators>
@@ -152,7 +146,7 @@ const Testimonials = () => {
         </S.MobileWrapper>
       </div>
     </S.TestimonialsSection>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

@@ -10,7 +10,6 @@ const professionals = [
   {
     image: `${professional1}`,
     name: 'Rosivangela Maria',
-    position: 'Cabeleireira Profissional',
     description: 'Especialista em cortes femininos, coloração e luzes modernas.',
     experienceTime: '12',
     isCertified: true,
@@ -19,7 +18,6 @@ const professionals = [
   {
     image: `${professional2}`,
     name: 'Ary Silva',
-    position: 'Barbeiro Profissional',
     description: 'Focado em cortes masculinos, barba e design de sobrancelhas.',
     experienceTime: '8',
     isCertified: true,
@@ -28,7 +26,6 @@ const professionals = [
   {
     image: `${professional3}`,
     name: 'Carla Souza',
-    position: 'Manicure e Pedicure',
     description: 'cuidados das mãos e pés, especialista em esmaltação em gel.',
     experienceTime: '6',
     isCertified: false,
@@ -37,7 +34,6 @@ const professionals = [
   {
     image: `${professional4}`,
     name: 'Mariana Oliveira',
-    position: 'Maquiadora Profissional',
     description: 'Maquiagens para festas, casamentos e ensaios fotográficos.',
     experienceTime: '10',
     isCertified: true,
@@ -92,7 +88,6 @@ const ProfessionalList = () => {
               description={professional.description}
               experienceTime={professional.experienceTime}
               isCertified={professional.isCertified}
-              position={professional.position}
               specialties={professional.specialties}
             />
           ))}
@@ -118,7 +113,6 @@ const ProfessionalList = () => {
                   description={professional.description}
                   experienceTime={professional.experienceTime}
                   isCertified={professional.isCertified}
-                  position={professional.position}
                   specialties={professional.specialties}
                 />
               </S.Slide>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as S from './styles';
 
 type ServiceItemProps = {
-  iconClassName: string;
+  icon: React.ComponentType<any>; // Prop para o componente de ícone
   title: string;
   description: string;
   price: string;
@@ -10,15 +10,12 @@ type ServiceItemProps = {
   serviceValue: string;
 };
 
-const ServiceItem = ({ iconClassName, title, price, description, subServices, serviceValue }: ServiceItemProps) => {
+const ServiceItem = ({ icon: Icon, title, price, description, subServices, serviceValue }: ServiceItemProps) => {
   const [showAll, setShowAll] = useState(false);
 
   const handleScheduleClick = () => {
-    // Update URL with service query parameter
     window.history.pushState(null, '', `#scheduling?service=${serviceValue}`);
-    // Trigger hashchange event to notify Scheduling component
     window.dispatchEvent(new Event('hashchange'));
-    // Scroll to scheduling section
     const schedulingSection = document.getElementById('scheduling');
     if (schedulingSection) {
       schedulingSection.scrollIntoView({ behavior: 'smooth' });
@@ -27,7 +24,7 @@ const ServiceItem = ({ iconClassName, title, price, description, subServices, se
 
   return (
     <S.ServiceItem>
-      <i className={iconClassName}></i>
+      <Icon /> {/* Renderiza o ícone passado como prop */}
       <S.ServiceTitle>{title}</S.ServiceTitle>
       <S.ServiceText>{description}</S.ServiceText>
       <S.ServicePrice>{price}</S.ServicePrice>
@@ -43,7 +40,9 @@ const ServiceItem = ({ iconClassName, title, price, description, subServices, se
           </p>
         )}
       </S.ServiceJobList>
-        <S.ServiceButton onClick={handleScheduleClick} secundary>Agendar Serviço</S.ServiceButton>
+      <S.ServiceButton onClick={handleScheduleClick} secondary>
+        Agendar Serviço
+      </S.ServiceButton>
     </S.ServiceItem>
   );
 };

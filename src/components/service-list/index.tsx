@@ -1,10 +1,18 @@
 import ServiceItem from '../service-item';
 import * as S from './styles';
+import {
+  RiSparkling2Line,
+  RiScissors2Line,
+  RiPaletteLine,
+  RiEyeLine,
+  RiHeart3Line,
+  RiGiftLine,
+} from 'react-icons/ri';
 
 const Services = [
   {
     id: 1,
-    iconClassName: 'ri-sparkling-2-line',
+    icon: RiSparkling2Line, // Ícone para unhas
     title: 'Unhas',
     description: 'Beleza até a ponta dos dedos! Do cuidado básico ao luxo das técnicas modernas.',
     price: 'A partir de R$ 49,90',
@@ -21,7 +29,7 @@ const Services = [
   },
   {
     id: 2,
-    iconClassName: 'ri-scissors-2-line',
+    icon: RiScissors2Line, // Ícone para cabelo
     title: 'Cabelo',
     description: 'Transforme seus fios com cortes modernos, escovas incríveis e tratamentos revitalizantes.',
     price: 'A partir de R$ 79,90',
@@ -44,7 +52,7 @@ const Services = [
   },
   {
     id: 3,
-    iconClassName: 'ri-palette-line',
+    icon: RiPaletteLine, // Ícone para química capilar
     title: 'Química Capilar',
     description: 'Cores vibrantes, mechas iluminadas e técnicas modernas para renovar o visual.',
     price: 'A partir de R$ 120,00',
@@ -53,7 +61,7 @@ const Services = [
   },
   {
     id: 4,
-    iconClassName: 'ri-eye-line',
+    icon: RiEyeLine, // Ícone para sobrancelhas e micropigmentação
     title: 'Sobrancelhas & Micropigmentação',
     description: 'Destaque seu olhar com design perfeito e técnicas avançadas de micropigmentação.',
     price: 'A partir de R$ 59,90',
@@ -67,7 +75,7 @@ const Services = [
   },
   {
     id: 5,
-    iconClassName: 'ri-heart-3-line',
+    icon: RiHeart3Line, // Ícone para estética e bem-estar
     title: 'Estética & Bem-estar',
     description: 'Tratamentos de pele e cuidados estéticos para renovar sua beleza natural.',
     price: 'Sob consulta',
@@ -82,7 +90,7 @@ const Services = [
   },
   {
     id: 6,
-    iconClassName: 'ri-gift-line',
+    icon: RiGiftLine, // Ícone para pacotes especiais
     title: 'Pacotes Especiais',
     description: 'Combine serviços exclusivos e viva uma experiência de beleza completa.',
     price: 'A partir de R$ 199,90',
@@ -105,9 +113,9 @@ const ServiceList = () => {
           {Services.map((service) => (
             <ServiceItem
               key={service.id}
+              icon={service.icon} // Passa o componente de ícone
               title={service.title}
               description={service.description}
-              iconClassName={service.iconClassName}
               price={service.price}
               subServices={service.subServices}
               serviceValue={service.serviceValue}
