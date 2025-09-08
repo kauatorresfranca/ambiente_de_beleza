@@ -2,6 +2,14 @@ import styled from 'styled-components';
 import { breakpoints, colors } from '../../../styles';
 import Button from '../button';
 
+export const ServiceButton = styled(Button)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 12px;
+`;
+
 export const ServiceItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -23,6 +31,12 @@ export const ServiceItem = styled.li`
       background-color: ${colors.primary};
       color: ${colors.white};
     }
+
+    ${ServiceButton} {
+        background-color: ${colors.primary};
+        color: ${colors.white};
+    }
+
   }
 
   a {
@@ -97,11 +111,3 @@ export const ServiceJobList = styled.ul`
         }
     }
     `;
-
-export const ServiceButton = styled(Button)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 12px;
-`;

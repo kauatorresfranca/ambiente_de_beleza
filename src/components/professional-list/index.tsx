@@ -5,41 +5,53 @@ import professional3 from '../../assets/images/profissionals/profissional3.jpg';
 import professional4 from '../../assets/images/profissionals/profissional4.jpg';
 import * as S from './styles';
 import { useState, useRef } from 'react';
+import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 
 const professionals = [
   {
     image: `${professional1}`,
     name: 'Rosivangela Maria',
-    description: 'Especialista em cortes femininos, coloração e luzes modernas.',
-    experienceTime: '12',
+    description:
+      'especialista em sobrancelhas, estética e cuidados completos de beleza.',
+    experienceTime: '15',
     isCertified: true,
-    specialties: ['Corte Feminino', 'Luzes', 'Coloração'],
+    specialties: [
+      'Micropigmentação',
+      'Design de Sobrancelhas',
+      'Manicure e Pedicure',
+      'Cabelo (corte, coloração e tratamentos)',
+      'Estética & Bem-estar',
+    ],
   },
-  {
+    {
     image: `${professional2}`,
     name: 'Ary Silva',
-    description: 'Focado em cortes masculinos, barba e design de sobrancelhas.',
-    experienceTime: '8',
+    description:
+      'Especialista em cortes femininos, penteados, química capilar.',
+    experienceTime: '14',
     isCertified: true,
-    specialties: ['Corte Masculino', 'Barba', 'Sobrancelha'],
+    specialties: ['Corte Feminino', 'Penteados', 'Química Capilar'],
   },
   {
     image: `${professional3}`,
-    name: 'Carla Souza',
-    description: 'cuidados das mãos e pés, especialista em esmaltação em gel.',
-    experienceTime: '6',
-    isCertified: false,
-    specialties: ['Manicure', 'Pedicure', 'Esmaltação em Gel'],
+    name: 'Alexa',
+    description:
+      'Especializada em massagens relaxantes e terapêuticas.',
+    experienceTime: '—',
+    isCertified: true,
+    specialties: ['Massagem Relaxante', 'Massagem Terapêutica'],
   },
   {
     image: `${professional4}`,
-    name: 'Mariana Oliveira',
-    description: 'Maquiagens para festas, casamentos e ensaios fotográficos.',
-    experienceTime: '10',
+    name: 'Márcio Sá',
+    description:
+      'Responsável por tratamentos faciais e de pele.',
+    experienceTime: '—',
     isCertified: true,
-    specialties: ['Maquiagem Social', 'Noivas', 'Penteado'],
+    specialties: ['Tratamentos Faciais', 'Cuidados com a Pele'],
   },
 ];
+
 
 const ProfessionalList = () => {
   const [current, setCurrent] = useState(0);
@@ -96,7 +108,7 @@ const ProfessionalList = () => {
         {/* Slider apenas no mobile */}
         <S.MobileWrapper>
           <S.ArrowLeft onClick={prevSlide}>
-            <i className="ri-arrow-left-s-line" />
+            <RiArrowLeftSLine />
           </S.ArrowLeft>
 
           <S.Slider
@@ -120,7 +132,7 @@ const ProfessionalList = () => {
           </S.Slider>
 
           <S.ArrowRight onClick={nextSlide}>
-            <i className="ri-arrow-right-s-line" />
+            <RiArrowRightSLine />
           </S.ArrowRight>
 
           <S.Indicators>

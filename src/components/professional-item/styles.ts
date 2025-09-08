@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import { colors } from '../../../styles';
 import Button from '../button';
 
+export const ProfessionalButton = styled(Button)`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+`
+
 export const ProfessionalItem = styled.div`
     display: flex;
     flex-direction: column;
@@ -15,6 +21,10 @@ export const ProfessionalItem = styled.div`
         box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
         border: 1px solid ${colors.primary}70;
         transform: translateY(-2px) scale(1.04);
+
+        ${ProfessionalButton} {
+            color: ${colors.lightPrimary};
+        }
     }
 `;
 
@@ -111,10 +121,4 @@ export const ProfessionalSpecialtiesList = styled.ul`
         background-color: ${colors.lightPrimary};
         border-radius: 10px;
     }
-`
-
-export const ProfessionalButton = styled(Button)`
-    display: flex;
-    justify-content: center;
-    width: 100%;
 `

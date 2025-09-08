@@ -95,8 +95,9 @@ export const ArrowLeft = styled.button`
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 10;
 
-  i {
-    font-size: 22px;
+  svg {
+    height: 22px;
+    width: 22px;
   }
 
   &:hover {

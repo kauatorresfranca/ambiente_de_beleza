@@ -172,8 +172,8 @@ export const ArrowLeft = styled.button`
   z-index: 10; /* Ensures arrows are above the card */
 
   svg {
-    height: 26px;
-    width: 26px;
+    height: 22px;
+    width: 22px;
   }
 
   &:hover {

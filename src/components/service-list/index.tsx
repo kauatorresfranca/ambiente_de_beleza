@@ -15,7 +15,7 @@ const Services = [
     icon: RiSparkling2Line, // Ícone para unhas
     title: 'Unhas',
     description: 'Beleza até a ponta dos dedos! Do cuidado básico ao luxo das técnicas modernas.',
-    price: 'A partir de R$ 49,90',
+    price: 'A partir de R$ 30,00',
     subServices: [
       'Manicure',
       'Pedicure',
@@ -32,7 +32,7 @@ const Services = [
     icon: RiScissors2Line, // Ícone para cabelo
     title: 'Cabelo',
     description: 'Transforme seus fios com cortes modernos, escovas incríveis e tratamentos revitalizantes.',
-    price: 'A partir de R$ 79,90',
+    price: 'A partir de R$ 35,00',
     subServices: [
       'Corte',
       'Escova',
@@ -55,7 +55,7 @@ const Services = [
     icon: RiPaletteLine, // Ícone para química capilar
     title: 'Química Capilar',
     description: 'Cores vibrantes, mechas iluminadas e técnicas modernas para renovar o visual.',
-    price: 'A partir de R$ 120,00',
+    price: 'Sob consulta',
     subServices: ['Luzes', 'Mechas', 'Moreno iluminado', 'Coloração', 'Permanente afro'],
     serviceValue: 'hair_chemistry',
   },
@@ -64,7 +64,7 @@ const Services = [
     icon: RiEyeLine, // Ícone para sobrancelhas e micropigmentação
     title: 'Sobrancelhas & Micropigmentação',
     description: 'Destaque seu olhar com design perfeito e técnicas avançadas de micropigmentação.',
-    price: 'A partir de R$ 59,90',
+    price: 'A partir de R$ 35,00',
     subServices: [
       'Design de sobrancelhas',
       'Micropigmentação de sobrancelhas',
@@ -78,7 +78,7 @@ const Services = [
     icon: RiHeart3Line, // Ícone para estética e bem-estar
     title: 'Estética & Bem-estar',
     description: 'Tratamentos de pele e cuidados estéticos para renovar sua beleza natural.',
-    price: 'Sob consulta',
+    price: 'A partir de R$ 20,00',
     subServices: [
       'Limpeza de pele',
       'Depilação',
@@ -89,14 +89,24 @@ const Services = [
     serviceValue: 'aesthetics_wellness',
   },
   {
-    id: 6,
-    icon: RiGiftLine, // Ícone para pacotes especiais
-    title: 'Pacotes Especiais',
-    description: 'Combine serviços exclusivos e viva uma experiência de beleza completa.',
-    price: 'A partir de R$ 199,90',
-    subServices: ['Dia da Noiva', 'Dia da Princesa', 'Pacote Relax', 'Pacote Premium'],
-    serviceValue: 'special_packages',
-  },
+  id: 6,
+  icon: RiGiftLine, // Ícone para pacotes especiais
+  title: 'Pacotes Especiais',
+  description: 'Promoções exclusivas com hora marcada!',
+  price: 'A partir de R$ 50,00',
+  subServices: [
+    'Depilação íntima + perna completa',
+    'Hidratação + escova + pé + mão + sobrancelhas',
+    'Botox + corte das pontas',
+    'Selagem + corte das pontas',
+    'Progressiva + corte das pontas',
+    'Limpeza de pele completa',
+    'PROMOÇÃO - Pé e mão (terça a quinta)',
+  ],
+  serviceValue: 'special_packages',
+},
+
+
 ];
 
 const ServiceList = () => {
