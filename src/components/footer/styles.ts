@@ -58,7 +58,7 @@ export const FooterSection = styled.div`
     font-weight: 500;
     margin: 0.25rem 0;
 
-    i {
+    svg {
       font-size: 1rem;
       color: ${colors.primary};
     }

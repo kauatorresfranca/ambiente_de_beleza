@@ -66,7 +66,7 @@ export const ProfessionalAdicionals = styled.div`
     margin-bottom: 4px;
     gap: 8px;
 
-    i {
+    svg {
         color: ${colors.primary};
     }
 `
@@ -76,7 +76,7 @@ export const ProfessionalAdicionalsItem = styled.div`
     align-items: center;
     gap: 4px;
 
-    i {
+    svg {
         font-size: 14px;
         color: ${colors.primary};
     }

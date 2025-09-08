@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import * as S from './styles';
+import type { ElementType } from 'react';
 
 type ServiceItemProps = {
-  icon: React.ComponentType<any>; // Prop para o componente de ícone
+  icon: ElementType;
   title: string;
   description: string;
   price: string;
   subServices: string[];
   serviceValue: string;
 };
-
 const ServiceItem = ({ icon: Icon, title, price, description, subServices, serviceValue }: ServiceItemProps) => {
   const [showAll, setShowAll] = useState(false);
 

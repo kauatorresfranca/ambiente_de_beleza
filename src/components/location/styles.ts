@@ -76,7 +76,7 @@ export const LocationInfo = styled.div`
     margin-bottom: 8px;
     color: ${colors.title};
 
-    i {
+    svg {
       color: ${colors.primary};
     }
   }

@@ -127,8 +127,9 @@ export const Rating = styled.div`
   display: flex;
   gap: 2px;
 
-  i {
-    font-size: 16px;
+  svg {
+    height: 16px;
+    width: 16px;
     color: ${colors.primary};
   }
 `
@@ -170,8 +171,9 @@ export const ArrowLeft = styled.button`
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 10; /* Ensures arrows are above the card */
 
-  i {
-    font-size: 22px;
+  svg {
+    height: 26px;
+    width: 26px;
   }
 
   &:hover {
