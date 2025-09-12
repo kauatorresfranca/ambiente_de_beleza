@@ -11,31 +11,34 @@
     <!-- Meta descrição otimizada com CTA e palavras-chave -->
     <meta name="description" content="Ambiente de Beleza, o melhor salão de beleza em Maceió, AL. Especializado em cabelos, unhas, maquiagem e estética no bairro São Jorge. Agende agora e realce sua beleza!">
 
-    <!-- Meta keywords (opcional, mas ajuda em alguns motores de busca) -->
+    <!-- Meta keywords (opcional) -->
     <meta name="keywords" content="salão de beleza Maceió, Ambiente de Beleza, corte de cabelo Maceió, manicure São Jorge, estética em Maceió">
 
-    <!-- Open Graph para compartilhamentos em redes sociais -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Ambiente de Beleza - Salão de Beleza em Maceió, AL" />
     <meta property="og:description" content="Especializado em cabelos, unhas, estética e bem-estar no bairro São Jorge. Agende seu horário!" />
     <meta property="og:image" content="/assets/logo.jpg" />
     <meta property="og:url" content="https://www.ambientedebeleza.com.br" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Cards para melhor integração com X/Twitter -->
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ambiente de Beleza - Salão de Beleza em Maceió, AL" />
     <meta name="twitter:description" content="Especializado em cabelos, unhas, estética e bem-estar no bairro São Jorge. Agende seu horário!" />
     <meta name="twitter:image" content="/assets/logo.jpg" />
 
-    <!-- Link canônico para evitar duplicatas -->
+    <!-- Link canônico -->
     <link rel="canonical" href="https://www.ambientedebeleza.com.br" />
 
+    <!-- Preload das fontes -->
     <link rel="preload" href="/static/fonts/Nunito-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/static/fonts/Nunito-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="/fonts/fonts.css">
+    <!-- CSS de fontes sem bloquear renderização -->
+    <link rel="preload" href="/fonts/fonts.css" as="style">
+    <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
 
-    <!-- Schema Markup para SEO local (LocalBusiness) com endereço e horário atualizados -->
+    <!-- Schema Markup LocalBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -76,6 +79,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>
