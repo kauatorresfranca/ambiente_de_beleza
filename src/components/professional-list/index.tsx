@@ -1,6 +1,6 @@
 import ProfessionalItem from '../professional-item';
-import professional1 from '../../assets/images/profissionals/profissional1.jpg';
-import professional2 from '../../assets/images/profissionals/profissional2.jpg';
+import professional1 from '../../assets/images/profissionals/profissional1.svg';
+import professional2 from '../../assets/images/profissionals/profissional2.svg';
 import professional3 from '../../assets/images/profissionals/profissional3.jpg';
 import professional4 from '../../assets/images/profissionals/profissional4.jpg';
 import * as S from './styles';
@@ -23,7 +23,7 @@ const professionals = [
       'Estética & Bem-estar',
     ],
   },
-    {
+  {
     image: `${professional2}`,
     name: 'Ary Silva',
     description:
@@ -37,7 +37,7 @@ const professionals = [
     name: 'Alexa',
     description:
       'Especializada em massagens relaxantes e terapêuticas.',
-    experienceTime: '—',
+    experienceTime: '4',
     isCertified: true,
     specialties: ['Massagem Relaxante', 'Massagem Terapêutica'],
   },
@@ -46,12 +46,11 @@ const professionals = [
     name: 'Márcio Sá',
     description:
       'Responsável por tratamentos faciais e de pele.',
-    experienceTime: '—',
+    experienceTime: '5',
     isCertified: true,
     specialties: ['Tratamentos Faciais', 'Cuidados com a Pele'],
   },
 ];
-
 
 const ProfessionalList = () => {
   const [current, setCurrent] = useState(0);
@@ -72,12 +71,12 @@ const ProfessionalList = () => {
 
   const handleTouchEnd = () => {
     const diff = touchStartX.current - touchEndX.current;
-    const threshold = 50; // Minimum swipe distance in pixels
+    const threshold = 50; // distância mínima em px para swipe
 
     if (diff > threshold) {
-      nextSlide(); // Swipe left, go to next slide
+      nextSlide(); // swipe para esquerda → próximo
     } else if (diff < -threshold) {
-      prevSlide(); // Swipe right, go to previous slide
+      prevSlide(); // swipe para direita → anterior
     }
   };
 
@@ -106,9 +105,16 @@ const ProfessionalList = () => {
         </S.ProfessionalList>
 
         {/* Slider apenas no mobile */}
-        <S.MobileWrapper>
-          <S.ArrowLeft onClick={prevSlide}>
-            <RiArrowLeftSLine />
+        <S.MobileWrapper
+          role="region"
+          aria-roledescription="carrossel"
+          aria-label="Profissionais"
+        >
+          <S.ArrowLeft
+            onClick={prevSlide}
+            aria-label="Slide anterior"
+          >
+            <RiArrowLeftSLine aria-hidden="true" />
           </S.ArrowLeft>
 
           <S.Slider
@@ -131,8 +137,11 @@ const ProfessionalList = () => {
             ))}
           </S.Slider>
 
-          <S.ArrowRight onClick={nextSlide}>
-            <RiArrowRightSLine />
+          <S.ArrowRight
+            onClick={nextSlide}
+            aria-label="Próximo slide"
+          >
+            <RiArrowRightSLine aria-hidden="true" />
           </S.ArrowRight>
 
           <S.Indicators>
@@ -141,6 +150,8 @@ const ProfessionalList = () => {
                 key={index}
                 className={current === index ? 'active' : ''}
                 onClick={() => setCurrent(index)}
+                aria-label={`Ir para o slide ${index + 1}`}
+                aria-current={current === index ? 'true' : undefined}
               />
             ))}
           </S.Indicators>

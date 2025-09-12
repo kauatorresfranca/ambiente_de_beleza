@@ -51,6 +51,10 @@ export const ProfessionalList = styled.div`
   @media (max-width: ${breakpoints.tablet}) {
     display: none;
   }
+
+  @media (max-width: ${breakpoints.desktop}) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 `;
 
 /* Slider mobile */

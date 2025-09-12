@@ -147,7 +147,7 @@ export const ResultThumb = styled.div`
 
   img {
     width: 100%;
-    height: 220px;
+    height: 240px;
     object-fit: cover;
     border-radius: 10px;
 

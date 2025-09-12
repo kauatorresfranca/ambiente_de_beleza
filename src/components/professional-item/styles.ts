@@ -1,12 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../styles';
-import Button from '../button';
-
-export const ProfessionalButton = styled(Button)`
-    display: flex;
-    justify-content: center;
-    width: 100%;
-`
+import { breakpoints, colors } from '../../../styles';
 
 export const ProfessionalItem = styled.div`
     display: flex;
@@ -16,15 +9,13 @@ export const ProfessionalItem = styled.div`
     border: 1px solid ${colors.primary}40;
     border-radius: 10px;
 
-    &:hover {
+    @media (min-width: ${breakpoints.laptop}) {
+        &:hover {
         cursor: pointer;
         box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
         border: 1px solid ${colors.primary}70;
         transform: translateY(-2px) scale(1.04);
-
-        ${ProfessionalButton} {
-            color: ${colors.lightPrimary};
-        }
+    }
     }
 `;
 
