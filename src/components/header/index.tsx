@@ -1,5 +1,5 @@
 import * as S from './styles';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/images/logo.svg';
 import { useState, useEffect } from 'react';
 import { RiCloseLargeFill, RiMenu2Line, RiPhoneLine } from 'react-icons/ri';
 

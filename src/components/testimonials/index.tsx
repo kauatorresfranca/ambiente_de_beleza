@@ -3,8 +3,7 @@ import * as S from './styles';
 import client1 from '../../assets/images/clients/client1.svg';
 import client2 from '../../assets/images/clients/client2.svg';
 import client3 from '../../assets/images/clients/client3.svg';
-import result1 from '../../assets/images/clients/result/result1.jpg';
-import result2 from '../../assets/images/clients/result/result2.jpg';
+import result3 from '../../assets/images/clients/result3.jpg';
 import { RiStarFill, RiStarLine, RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 
 const testimonials = [
@@ -13,12 +12,11 @@ const testimonials = [
     avatar: client1,
     text: 'Meu cabelo ficou impecável! Atendimento atencioso e resultado acima do esperado.',
     rating: 5,
-    photoUrl: result2,
   },
   {
-    name: 'Carlos André',
+    name: 'Luciana Fernandes',
     avatar: client2,
-    text: 'Corte e barba alinhados do jeito que eu gosto. Voltarei com certeza!',
+    text: 'O trabalho de vocês é incrível! A atenção aos detalhes, o carinho e o cuidado dedicados a cada cliente são verdadeiramente excepcionais. Vocês fazem a diferença em minha vida com seu profissionalismo e dedicação. Obrigada por serem tão valiosos! ❤',
     rating: 5,
   },
   {
@@ -26,7 +24,7 @@ const testimonials = [
     avatar: client3,
     text: 'Profissionais cuidadosos, explicaram cada etapa. Amei a coloração nova!',
     rating: 5,
-    photoUrl: result1,
+    photoUrl: result3,
   },
 ];
 
