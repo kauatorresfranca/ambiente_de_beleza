@@ -40,15 +40,22 @@ export const ServicesDescription = styled.p`
 `
 
 export const ServicesList = styled.ul`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* desktop por padrão */
+  gap: 24px;
 
-    @media (max-width: ${breakpoints.tablet}) {
-        grid-template-columns: 1fr;
-    }
+  /* mobile: 1 coluna */
+  @media (max-width: ${breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: ${breakpoints.desktop}) {
-        grid-template-columns: 1fr 1fr;
-    }
-`
+  /* entre mobile e tablet: 2 colunas */
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* opcional: tablet exato até laptop */
+  @media (min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.laptop}) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;

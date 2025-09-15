@@ -1,6 +1,6 @@
 import ProfessionalItem from '../professional-item';
-import professional1 from '../../assets/images/profissionals/profissional1.svg';
-import professional2 from '../../assets/images/profissionals/profissional2.svg';
+import professional1 from '../../assets/images/profissionals/profissional1.jpg';
+import professional2 from '../../assets/images/profissionals/profissional2.jpg';
 import professional3 from '../../assets/images/profissionals/profissional3.jpg';
 import professional4 from '../../assets/images/profissionals/profissional4.jpg';
 import * as S from './styles';
