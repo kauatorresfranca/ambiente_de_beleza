@@ -7,12 +7,23 @@ export const TestimonialsSection = styled.section`
 `;
 
 export const TestimonialsTitle = styled.h2`
-  font-size: 28px;
-  margin-bottom: 12px;
+  font-size: 38px;
+    color: ${colors.title};
+    margin-bottom: 16px;
 
-  span {
-    color: ${colors.primary};
-  }
+    span {
+        color: ${colors.primary};
+    }
+
+    &::before {
+        display: block;
+        content: '';
+        width: 70px;
+        height: 4px;
+        border-radius: 10px;
+        background-color: ${colors.primary};
+        margin: 0 auto 16px auto;
+    }
 `;
 
 export const TestimonialsDescription = styled.p`

@@ -6,7 +6,7 @@ export const Professionals = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 48px 24px;
+    padding: 48px 24px 0 24px;
     text-align: center;
     background: ${colors.background};
 
