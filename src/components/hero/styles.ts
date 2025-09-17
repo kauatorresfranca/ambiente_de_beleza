@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HeroImage from "../../assets/images/hero.svg";
+import HeroImage from "../../assets/images/hero.jpg";
 import { breakpoints, colors } from "../../../styles";
 
 export const Hero = styled.section`

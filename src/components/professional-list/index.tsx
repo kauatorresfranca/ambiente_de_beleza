@@ -17,10 +17,8 @@ const professionals = [
     isCertified: true,
     specialties: [
       'Micropigmentação',
-      'Design de Sobrancelhas',
       'Manicure e Pedicure',
-      'Cabelo (corte, coloração e tratamentos)',
-      'Estética & Bem-estar',
+      'Cabelo',
     ],
   },
   {
@@ -30,14 +28,14 @@ const professionals = [
       'Especialista em cortes femininos, penteados, química capilar.',
     experienceTime: '14',
     isCertified: true,
-    specialties: ['Corte Feminino', 'Penteados', 'Química Capilar'],
+    specialties: ['Realinhamento Capilar'],
   },
   {
     image: `${professional3}`,
-    name: 'Alexa',
+    name: 'Alexa Christie ',
     description:
       'Especializada em massagens relaxantes e terapêuticas.',
-    experienceTime: '4',
+    experienceTime: '2',
     isCertified: true,
     specialties: ['Massagem Relaxante', 'Massagem Terapêutica'],
   },
@@ -46,9 +44,9 @@ const professionals = [
     name: 'Márcio Sá',
     description:
       'Responsável por tratamentos faciais e de pele.',
-    experienceTime: '5',
+    experienceTime: '10',
     isCertified: true,
-    specialties: ['Tratamentos Faciais', 'Cuidados com a Pele'],
+    specialties: ['Harmonização Facial', 'Harmonização Corporal'],
   },
 ];
 
