@@ -193,6 +193,20 @@ export const SchedulinglButton = styled(Button)`
       background-color: ${colors.primary}80;
     }
   `}
+
+  ${({ $disabled }) =>
+    $disabled &&
+    `
+    background-color: #d3d3d3;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: #d3d3d3;
+      cursor: not-allowed;
+    }
+  `}
 `;
 
 export const DatePickerWrapper = styled.div`

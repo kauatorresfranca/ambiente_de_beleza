@@ -35,6 +35,7 @@ const Scheduling = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isTimeOpen, setIsTimeOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const serviceRef = useRef<HTMLDivElement>(null);
   const timeRef = useRef<HTMLDivElement>(null);
 
@@ -124,19 +125,47 @@ const Scheduling = () => {
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault(); // Previne qualquer comportamento padrão
+
+    // Validação
     const newErrors: { [key: string]: string } = {};
 
-    if (!formData.fullName) newErrors.fullName = 'Informe seu nome completo.';
-    if (!formData.service) newErrors.service = 'Selecione um serviço.';
-    if (!selectedDate) newErrors.preferredDate = 'Selecione uma data.';
-    if (!formData.preferredTime) newErrors.preferredTime = 'Selecione um horário.';
-
-    if (Object.keys(newErrors).length > 0) {
-      e.preventDefault();
-      setErrors(newErrors);
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Informe seu nome completo.';
     }
+    if (!formData.service) {
+      newErrors.service = 'Selecione um serviço.';
+    }
+    if (!selectedDate) {
+      newErrors.preferredDate = 'Selecione uma data.';
+    }
+    if (!formData.preferredTime) {
+      newErrors.preferredTime = 'Selecione um horário.';
+    }
+
+    // Se há erros, exibe e para a execução
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      // Scroll para o primeiro erro
+      const firstErrorElement = document.querySelector('.error');
+      if (firstErrorElement) {
+        firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    // Se não há erros, redireciona para WhatsApp
+    setIsSubmitting(true);
+    
+    // Pequeno delay para mostrar que está processando (opcional)
+    setTimeout(() => {
+      window.open(getWhatsAppUrl(), '_blank', 'noopener,noreferrer');
+      setIsSubmitting(false);
+    }, 100);
   };
+
+  const isFormValid = formData.fullName.trim() && formData.service && selectedDate && formData.preferredTime;
 
   return (
     <S.Scheduling id="scheduling">
@@ -252,16 +281,13 @@ const Scheduling = () => {
           </S.SchedulingFormLine>
 
           <S.SchedulingFormLine>
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+            <S.SchedulinglButton 
+              $primary={true}
               onClick={handleSubmit}
+              $disabled={!isFormValid || isSubmitting}
             >
-              <S.SchedulinglButton $primary={true}>
-                Agendar
-              </S.SchedulinglButton>
-            </a>
+              {isSubmitting ? 'Agendando...' : 'Agendar'}
+            </S.SchedulinglButton>
           </S.SchedulingFormLine>
         </S.SchedulingForm>
       </div>
