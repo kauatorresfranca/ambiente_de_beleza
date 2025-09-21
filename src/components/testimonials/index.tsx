@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react';
 import * as S from './styles';
-import client1 from '../../assets/images/clients/client1.svg';
-import client2 from '../../assets/images/clients/client2.svg';
-import client3 from '../../assets/images/clients/client3.svg';
-import result3 from '../../assets/images/clients/result3.jpg';
+import client1 from '/assets/images/clients/client1.svg';
+import client2 from '/assets/images/clients/client2.svg';
+import client3 from '/assets/images/clients/client3.svg';
+import result3 from '/assets/images/clients/result3.jpg';
 import {
   RiStarFill,
   RiStarLine,
