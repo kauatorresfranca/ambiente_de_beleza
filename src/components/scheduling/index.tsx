@@ -258,9 +258,9 @@ const Scheduling = () => {
               rel="noopener noreferrer"
               onClick={handleSubmit}
             >
-              <S.ProfessionalButton primary={true}>
+              <S.SchedulinglButton $primary={true}>
                 Agendar
-              </S.ProfessionalButton>
+              </S.SchedulinglButton>
             </a>
           </S.SchedulingFormLine>
         </S.SchedulingForm>

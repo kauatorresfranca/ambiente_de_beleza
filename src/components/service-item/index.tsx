@@ -10,6 +10,7 @@ type ServiceItemProps = {
   subServices: string[];
   serviceValue: string;
 };
+
 const ServiceItem = ({ icon: Icon, title, price, description, subServices, serviceValue }: ServiceItemProps) => {
   const [showAll, setShowAll] = useState(false);
 
@@ -40,7 +41,7 @@ const ServiceItem = ({ icon: Icon, title, price, description, subServices, servi
           </p>
         )}
       </S.ServiceJobList>
-      <S.ServiceButton onClick={handleScheduleClick} secondary>
+      <S.ServiceButton onClick={handleScheduleClick} $secondary={true}>
         Agendar Serviço
       </S.ServiceButton>
     </S.ServiceItem>

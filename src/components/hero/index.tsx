@@ -15,7 +15,7 @@ const Hero = () => {
             sua transformação.
           </S.HeroSubtitle>
           <a href="#scheduling">
-            <Button primary>
+            <Button $primary>
               <RiCalendarLine /> Agende seu horário
             </Button>
           </a>

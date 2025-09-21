@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { breakpoints, colors } from "../../../styles";
-import Button from "../button";
+import styled from 'styled-components';
+import { breakpoints, colors } from '../../../styles';
+import Button from '../button';
 
 export const Header = styled.header`
   position: sticky;
@@ -22,7 +22,7 @@ export const Header = styled.header`
     font-size: 24px;
   }
 
-  @media(max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     .menu-hamgurguer {
       display: block;
     }
@@ -38,7 +38,7 @@ export const Header = styled.header`
 export const HeaderLogo = styled.img`
   width: 80px;
   height: 80px;
-  
+
   @media (max-width: ${breakpoints.tablet}) {
     margin: 0 auto;
   }
@@ -96,7 +96,7 @@ export const HeaderLink = styled.a`
   border-bottom: 2px solid transparent;
   text-decoration: none;
   color: ${colors.title};
-  transition: .3s ease;
+  transition: 0.3s ease;
 
   &:hover {
     color: ${colors.primary};
@@ -110,6 +110,27 @@ export const HeaderLink = styled.a`
 `;
 
 export const HeaderButton = styled(Button)`
+  ${({ $primary, $secondary }) => `
+    background-color: ${$primary ? colors.primary : 'transparent'};
+    color: ${$primary ? colors.white : colors.primary};
+    border: ${$secondary ? `1px solid ${colors.primary}` : '1px solid transparent'};
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: ${$primary ? `${colors.primary}90` : colors.primary};
+      color: ${colors.white};
+      transform: scale(1.05);
+    }
+  `}
 
   @media (max-width: ${breakpoints.tablet}) {
     display: none;

@@ -177,13 +177,13 @@ export const ErrorMessage = styled.span`
   text-align: left;
 `;
 
-export const ProfessionalButton = styled(Button)`
+export const SchedulinglButton = styled(Button)`
   display: flex;
   justify-content: center;
   width: 100%;
 
-  ${({ primary }) =>
-    primary &&
+  ${({ $primary }) =>
+    $primary &&
     `
     background-color: ${colors.primary};
     color: ${colors.white};

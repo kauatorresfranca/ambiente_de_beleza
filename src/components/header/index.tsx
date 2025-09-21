@@ -104,7 +104,7 @@ const Header = () => {
         </S.HeaderNavigationMobile>
 
         <a href="#scheduling" rel="noopener noreferrer">
-          <S.HeaderButton primary>
+          <S.HeaderButton $primary>
             <RiPhoneLine /> Agendar Horário
           </S.HeaderButton>
         </a>
@@ -112,4 +112,5 @@ const Header = () => {
     </S.Header>
   );
 };
+
 export default Header;
