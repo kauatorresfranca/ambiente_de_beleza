@@ -21,7 +21,7 @@ const testimonials = [
     photoUrl: result3,
   },
   {
-    name: 'Luciana Fernandes',
+    name: 'Marcia Ramos',
     avatar: client2,
     text: 'O trabalho de vocês é incrível! A atenção aos detalhes, o carinho e o cuidado dedicados a cada cliente são verdadeiramente excepcionais. Vocês fazem a diferença em minha vida com seu profissionalismo e dedicação. Obrigada por serem tão valiosos! ❤',
     rating: 5,
