@@ -20,6 +20,10 @@ export const Header = styled.header`
     position: absolute;
     display: none;
     font-size: 24px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   @media (max-width: ${breakpoints.tablet}) {

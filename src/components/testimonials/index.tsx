@@ -1,9 +1,3 @@
-import { useState, useRef } from 'react';
-import * as S from './styles';
-import client1 from '/assets/images/clients/client1.svg';
-import client2 from '/assets/images/clients/client2.svg';
-import client3 from '/assets/images/clients/client3.svg';
-import result3 from '/assets/images/clients/result3.jpg';
 import {
   RiStarFill,
   RiStarLine,
@@ -12,27 +6,38 @@ import {
   RiCloseLargeFill
 } from 'react-icons/ri';
 
+import { useState, useRef } from 'react';
+
+import * as S from './styles';
+import client1 from '/assets/images/clients/client1.svg';
+import client2 from '/assets/images/clients/client2.svg';
+import client3 from '/assets/images/clients/client3.svg';
+import result1 from '/assets/images/clients/result1.jpg';
+import result2 from '/assets/images/clients/result2.jpg';
+import result3 from '/assets/images/clients/result3.jpg';
+
+
 const testimonials = [
   {
-    name: 'Maiara Torres',
-    avatar: client1,
-    text: 'Meu cabelo ficou impecável! Atendimento atencioso e resultado acima do esperado.',
+    name: 'Luciana Fernandes',
+    avatar: client3,
+    text: 'O trabalho de vocês é incrível! A atenção aos detalhes, o carinho e o cuidado dedicados a cada cliente são verdadeiramente excepcionais. Vocês fazem a diferença em minha vida com seu profissionalismo e dedicação. Obrigada por serem tão valiosos! ❤',
     rating: 5,
     photoUrl: result3,
   },
   {
     name: 'Marcia Ramos',
     avatar: client2,
-    text: 'O trabalho de vocês é incrível! A atenção aos detalhes, o carinho e o cuidado dedicados a cada cliente são verdadeiramente excepcionais. Vocês fazem a diferença em minha vida com seu profissionalismo e dedicação. Obrigada por serem tão valiosos! ❤',
-    rating: 5,
-    photoUrl: result3,
-  },
-  {
-    name: 'Julia Ferreira',
-    avatar: client3,
     text: 'Profissionais cuidadosos, explicaram cada etapa. Amei a coloração nova!',
     rating: 5,
-    photoUrl: result3,
+    photoUrl: result2,
+  },
+  {
+    name: 'Samara Brum',
+    avatar: client1,
+    text: 'Amo o Ambiente da Beleza! Me sinto super à vontade com a Rosé e o Ari. Minhas unhas duram até 12 dias, o ambiente é tranquilo e acolhedor, e o preço é ótimo.',
+    rating: 5,
+    photoUrl: result1,
   },
 ];
 

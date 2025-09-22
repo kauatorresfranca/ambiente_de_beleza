@@ -197,7 +197,7 @@ export const SchedulinglButton = styled(Button)`
   ${({ $disabled }) =>
     $disabled &&
     `
-    background-color: #d3d3d3;
+    background-color: ${colors.lightgray};
     color: #666;
     cursor: not-allowed;
     opacity: 0.6;
