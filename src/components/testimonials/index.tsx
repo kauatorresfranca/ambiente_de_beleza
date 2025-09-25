@@ -28,14 +28,14 @@ const testimonials = [
   {
     name: 'Marcia Ramos',
     avatar: client2,
-    text: 'Profissionais cuidadosos, explicaram cada etapa. Amei a coloração nova!',
+    text: 'Profissionais cuidadosos, explicaram cada etapa. Amei o resultado do meu cabelo!',
     rating: 5,
     photoUrl: result2,
   },
   {
     name: 'Samara Brum',
     avatar: client1,
-    text: 'Amo o Ambiente da Beleza! Me sinto super à vontade com a Rosé e o Ari. Minhas unhas duram até 12 dias, o ambiente é tranquilo e acolhedor, e o preço é ótimo.',
+    text: 'Amo o Ambiente da Beleza! Me sinto super à vontade com a Rosé e o Ari. o ambiente é tranquilo e acolhedor, e o preço é ótimo.',
     rating: 5,
     photoUrl: result1,
   },

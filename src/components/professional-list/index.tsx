@@ -25,7 +25,7 @@ const professionals = [
     image: `${professional2}`,
     name: 'Ary Silva',
     description:
-      'Especialista em cortes femininos, penteados, química capilar.',
+      'Especialista em realinhamento capilar',
     experienceTime: '14',
     isCertified: true,
     specialties: ['Realinhamento Capilar'],

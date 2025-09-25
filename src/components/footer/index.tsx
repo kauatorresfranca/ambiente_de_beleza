@@ -77,8 +77,8 @@ const Footer = () => {
           </h5>
           <h5>
             <RiMailLine />
-            <a href="mailto:contato@ambientedebeleza.com" aria-label="Enviar e-mail">
-              contato@ambientedebeleza.com
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ambientedebelezaam@gmail.com" target="_blank">
+              ambientedebelezaam@gmail.com
             </a>
           </h5>
         </S.FooterSection>
