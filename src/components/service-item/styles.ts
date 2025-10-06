@@ -92,6 +92,7 @@ export const ServiceText = styled.p`
   font-size: 14px;
   text-align: left;
   color: ${colors.text};
+  margin-bottom: 6px;
 `;
 
 export const ServicePrice = styled.p`

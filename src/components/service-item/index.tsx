@@ -11,7 +11,7 @@ type ServiceItemProps = {
   serviceValue: string;
 };
 
-const ServiceItem = ({ icon: Icon, title, price, description, subServices, serviceValue }: ServiceItemProps) => {
+const ServiceItem = ({ icon: Icon, title, description, subServices, serviceValue }: ServiceItemProps) => {
   const [showAll, setShowAll] = useState(false);
 
   const handleScheduleClick = () => {
@@ -28,7 +28,6 @@ const ServiceItem = ({ icon: Icon, title, price, description, subServices, servi
       <Icon /> {/* Renderiza o ícone passado como prop */}
       <S.ServiceTitle>{title}</S.ServiceTitle>
       <S.ServiceText>{description}</S.ServiceText>
-      <S.ServicePrice>{price}</S.ServicePrice>
 
       <S.ServiceJobList>
         {(showAll ? subServices : subServices.slice(0, 3)).map((service, index) => (
