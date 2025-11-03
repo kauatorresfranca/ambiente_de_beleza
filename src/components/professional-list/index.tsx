@@ -1,8 +1,6 @@
 import ProfessionalItem from '../professional-item';
 import professional1 from '/assets/images/profissionals/profissional1.jpg';
 import professional2 from '/assets/images/profissionals/profissional2.jpg';
-import professional3 from '/assets/images/profissionals/profissional3.jpg';
-import professional4 from '/assets/images/profissionals/profissional4.jpg';
 import * as S from './styles';
 import { useState, useRef } from 'react';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
@@ -29,24 +27,6 @@ const professionals = [
     experienceTime: '14',
     isCertified: true,
     specialties: ['Realinhamento Capilar'],
-  },
-  {
-    image: `${professional3}`,
-    name: 'Alexa Christie ',
-    description:
-      'Especializada em massagens relaxantes e terapêuticas.',
-    experienceTime: '2',
-    isCertified: true,
-    specialties: ['Massagem Relaxante', 'Massagem Terapêutica'],
-  },
-  {
-    image: `${professional4}`,
-    name: 'Márcio Sá',
-    description:
-      'Responsável por tratamentos faciais e de pele.',
-    experienceTime: '10',
-    isCertified: true,
-    specialties: ['Harmonização Facial', 'Harmonização Corporal'],
   },
 ];
 

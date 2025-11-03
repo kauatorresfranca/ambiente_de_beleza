@@ -39,6 +39,7 @@ export const HeroContent = styled.div`
     border-radius: 10px;
     background-color: ${colors.primary};
     margin-bottom: 16px;
+}
 `;
 
 

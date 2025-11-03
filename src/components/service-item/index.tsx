@@ -28,7 +28,7 @@ const ServiceItem = ({ icon: Icon, title, description, subServices, serviceValue
       <Icon /> {/* Renderiza o ícone passado como prop */}
       <S.ServiceTitle>{title}</S.ServiceTitle>
       <S.ServiceText>{description}</S.ServiceText>
-
+      {/* Service price removed*/}
       <S.ServiceJobList>
         {(showAll ? subServices : subServices.slice(0, 3)).map((service, index) => (
           <li key={index}>{service}</li>
